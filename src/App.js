@@ -16,6 +16,9 @@ function App() {
         <p>
           A new line of change :)
         </p>
+        <p>
+          New line by Quinn S
+        </p>
         <a
           className="App-link"
           href="https://reactjs.org"
