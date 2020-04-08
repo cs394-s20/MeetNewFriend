@@ -19,7 +19,7 @@ function App() {
         <p>
           Mary's commit here!
           Quinn's commit here
-          Naeem's commit here 
+          Naeem's commit here!
         </p>
         <a
           className="App-link"
