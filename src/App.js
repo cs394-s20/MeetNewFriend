@@ -16,6 +16,9 @@ function App() {
         <p>
           A new line of change :)
         </p>
+        <p>
+          Mary's commit here!
+        </p>
         <a
           className="App-link"
           href="https://reactjs.org"
