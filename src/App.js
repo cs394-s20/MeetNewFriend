@@ -18,7 +18,7 @@ function App() {
         </p>
         <p>
           Mary's commit here!
-          New line by Quinn S
+          Quinn's commit here
         </p>
         <a
           className="App-link"
