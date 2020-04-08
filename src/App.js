@@ -18,6 +18,7 @@ function App() {
         </p>
         <p>
           Mary's commit here!
+          New line by Quinn S
         </p>
         <a
           className="App-link"
