@@ -13,6 +13,9 @@ function App() {
         <p>
           Change by Zhen Huang
         </p>
+        <p>
+          A new line of change :)
+        </p>
         <a
           className="App-link"
           href="https://reactjs.org"
