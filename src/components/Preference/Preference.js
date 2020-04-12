@@ -8,6 +8,8 @@ const buttonColor = selected => (
 const cuisine = { A: 'American', F: 'French', B: 'British', G: 'Greek', D: 'Mediterranean', M: 'Mexican', C: 'Chinese', I: 'Italian', N: 'Indian', K: 'Korean'};
 
 const Preference = ({ state }) => (
+    <div className="filter">
+        step one - choose a cuisine:
     <Button.Group hasAddons>
         { Object.values(cuisine)
             .map(value =>
@@ -19,6 +21,7 @@ const Preference = ({ state }) => (
             )
         }
     </Button.Group>
+    </div>
 );
 
 export default Preference;

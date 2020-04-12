@@ -24,6 +24,23 @@
   color: white;
 }
 
+.title {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 3%;
+  margin-left: 3%;
+}
+
+
+.filter, .restaurant-list {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.1rem;
+  margin-left: 3%;
+}
+
+.restaurant-list {
+  margin-top: 10px;
+}
+
 .App-link {
   color: #61dafb;
 }
