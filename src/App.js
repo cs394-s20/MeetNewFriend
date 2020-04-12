@@ -1,8 +1,10 @@
 import firebase from 'firebase/app';
 import 'firebase/database';
-import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import 'rbx/index.css';
+import { Button, Container, Title } from 'rbx';
+import React, { useState, useEffect } from 'react';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAiFra3hmMEore7QNZdZSUG0h3q3NUKg4I",
@@ -18,40 +20,41 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.database().ref();
 
+const Banner = ({ title }) => (
+  <Title>{ title || 'loading...' }</Title>
+);
 
-function App() {
+const EventsList = ({ events }) => (
+  <Button.Group>
+    { events.map(event => <Event key ={event.id} event={ event } />) }
+  </Button.Group>
+);
+
+const Event = ({ event }) => (
+  <Button>
+    Name : {event.name}
+  </Button>
+)
+
+
+const App = () => {
+  const [schedule, setSchedule] = useState({ title: '', events: [] });
+
+  useEffect(() => {
+    const handleData = snap => {
+      if (snap.val()) setSchedule(snap.val());
+    }
+    db.on('value', handleData, error => alert(error));
+    return () => { db.off('value', handleData); };
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>
-          Change by Zhen Huang
-        </p>
-        <p>
-          A new line of change :)
-        </p>
-        <p>
-          Mary's commit here!
-          Quinn's commit here
-          Naeem's commit here!
-        </p>
-        <p> 
-          Anam's commit here!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <Container>
+      <Banner title={ schedule.title } />
+      <EventsList events={ schedule.events } />
+    </Container>
+    );
+};
+
 
 export default App;
