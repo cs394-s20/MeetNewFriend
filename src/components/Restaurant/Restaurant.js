@@ -3,7 +3,7 @@ import React from "react";
 
 const Restaurant = ({ event }) => (
     <Button>
-        Name : {event.name}
+        {event.name}
     </Button>
 );
 
