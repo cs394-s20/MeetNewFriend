@@ -6,10 +6,10 @@ import Preference from "./Preference/Preference";
 
 
 const RestaurantList = ({ events }) => {
-    const [cuisine, setCuisine] = useState('American');
+    const [cuisine, setCuisine] = useState('Pick Cuisine');
     const [maxsize,setMaxSize] = useState('10');
 
-    const ANDMatch = event => cuisine ===event.cuisine;
+    const ANDMatch = event => cuisine === event.cuisine;
 
     const matchedRestaurants = events.filter(ANDMatch);
 
@@ -19,7 +19,7 @@ const RestaurantList = ({ events }) => {
     return (
         <React.Fragment>
             <Preference state={{ cuisine, setCuisine,maxsize,setMaxSize }} />
-            
+
                 <div className='restaurant-list'>
                     Available restaurants:
                 {/* <div class="row"> */}
