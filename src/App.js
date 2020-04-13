@@ -12,6 +12,7 @@ const db = firebase.database().ref();
 
 const App = () => {
   const [schedule, setSchedule] = useState({ title: '', events: [] });
+  const [currPage, setCurrPage] = useState("events");
 
   useEffect(() => {
     const handleData = snap => {
@@ -21,10 +22,33 @@ const App = () => {
     return () => { db.off('value', handleData); };
   }, []);
 
+  const updatePage = (l) => {
+    setCurrPage(l);
+  }
+
+  const handlePage = () => {
+    if (currPage === "events"){
+      return (
+      <Container>
+        <HeaderBar title={ schedule.title } />
+        <RestaurantList events={ schedule.events } />
+      </Container>
+      );
+    }
+    else if (currPage === "home"){
+      return (
+        <Container>
+          <HeaderBar title= { schedule.title } />
+        </Container>
+      );
+    }
+  }
+
+  const page = handlePage();
+
   return (
     <Container>
-      <HeaderBar title={ schedule.title } />
-      <RestaurantList events={ schedule.events } />
+      {page}
     </Container>
     );
 };
