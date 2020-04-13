@@ -37,9 +37,8 @@ const Restaurant = ({ event }) => {
 
     return (
         <Card>
-            <Card.Image>
-                {/*<img src={require("./buffalo.jpg")} alt="Logo"/>;*/}
-                <img src={event.imageURL} alt="Logo"/>
+            <Card.Image size="medium">
+                <img src={event.imageURL} style={{width: 300, height: 200}} alt="Logo"/>
             </Card.Image>
 
             <Card.Header>
