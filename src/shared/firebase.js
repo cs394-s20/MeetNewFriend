@@ -10,7 +10,7 @@ const firebaseConfig = {
     storageBucket: "meetnewfriends-6e495.appspot.com",
     messagingSenderId: "34155896062",
     appId: "1:34155896062:web:36d0f8b4d5ca94abc899af",
-    measurementId: "G-WC91Q8GSP0"
+    measurementId: "G-WC91Q8GSP0",
 };
 
 firebase.initializeApp(firebaseConfig);

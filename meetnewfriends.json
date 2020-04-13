@@ -1,0 +1,124 @@
+{
+  "events" : [ null, {
+    "cuisine" : "Italian",
+    "date" : "2020-04-20",
+    "group-size" : "5/10",
+    "time" : "11:00-11:50",
+    "id" : "1",
+    "name" : "Le Peep",
+    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+  }, {
+    "cuisine" : "Italian",
+    "date" : "2020-04-18",
+    "group-size" : "7/10",
+    "time" : "10:00-10:50",
+    "id" : "2",
+    "name" : "Terra & Vine",
+    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fbuffalo.jpg?alt=media&token=ed14f7b4-53c9-4ff9-a9db-7787bced5231"
+  }, {
+    "cuisine" : "Mexican",
+    "date" : "2020-05-23",
+    "group-size" : "3/6",
+    "time" : "13:00-13:50",
+    "id" : "3",
+    "name" : "Taco Diablo",
+    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Ftaco.jpg?alt=media&token=6a8489ed-ed72-4ddb-ab97-7d85ecf7fed3"
+  }, {
+    "cuisine" : "Mexican",
+    "date" : "2020-05-25",
+    "group-size" : "2/5",
+    "time" : "12:30-13:50",
+    "id" : "4",
+    "name" : "That Little Mexican Cafe",
+    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fmexican.jpg?alt=media&token=d3ab63e8-cc56-4700-be85-f89e88f16c09"
+  }, {
+    "cuisine" : "American",
+    "date" : "2020-04-18",
+    "group-size" : "3/10",
+    "time" : "15:00-15:50",
+    "id" : "5",
+    "name" : "Buffalo Joe's",
+    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fbuffalo.jpg?alt=media&token=ed14f7b4-53c9-4ff9-a9db-7787bced5231"
+  }, {
+    "cuisine" : "Italian",
+    "date" : "2020-04-29",
+    "group-size" : "2/5",
+    "time" : "15:30-16:50",
+    "id" : "6",
+    "name" : "Gigio's Pizzeria",
+    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fgiordanos.jpg?alt=media&token=b4deb63a-38de-4d6c-a40b-26aa80f754b9"
+  }, {
+    "cuisine" : "Mediterranean",
+    "date" : "2020-04-27",
+    "group-size" : "2/7",
+    "time" : "14:00-15:20",
+    "id" : "7",
+    "name" : "Olive Mountain Grill",
+    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Folive.jpg?alt=media&token=3f9e9b3a-2aad-469a-af26-8d642b3fba31"
+  }, {
+    "cuisine" : "Italian",
+    "date" : "2020-04-27",
+    "groupSize" : "1/5",
+    "time" : "9:30-10:50",
+    "id" : "8",
+    "name" : "Giardanos",
+    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fbuffalo.jpg?alt=media&token=ed14f7b4-53c9-4ff9-a9db-7787bced5231"
+  }, {
+    "cuisine" : "American",
+    "date" : "2020-06-01",
+    "group-size" : "6/8",
+    "time" : "12:30-13:50",
+    "id" : "9",
+    "name" : "Farmhouse Evanston",
+    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Ffarmhouse.jpg?alt=media&token=9c976ebb-bf27-4f4a-bf7d-76f721eb08ad"
+  }, {
+    "cuisine" : "Mediterranean",
+    "date" : "2020-06-01",
+    "group-size" : "4/5",
+    "time" : "11:30-13:50",
+    "id" : "10",
+    "name" : "Five & Dine",
+    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Ffiveanddine.jpg?alt=media&token=b802bffb-c7c1-4fac-87fc-59fdbbf56879"
+  }, {
+    "cuisine" : "French",
+    "date" : "2020-04-21",
+    "group-size" : "2/10",
+    "time" : "6:30-8:00",
+    "id" : "11",
+    "name" : "Chez Benoit Bistro",
+    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Ffrance.jpg?alt=media&token=66898aee-32f5-4535-9b93-51ecf43e5dd9"
+  }, {
+    "cuisine" : "British",
+    "date" : "2020-04-13",
+    "group-size" : "15/20",
+    "time" : "21:00-23:00",
+    "id" : "12",
+    "name" : "The Irish Mill",
+    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fenglish.jpg?alt=media&token=444d6ba9-c4c4-496b-8c68-9e72bfaefbb9"
+  }, {
+    "cuisine" : "Greek",
+    "date" : "2020-04-12",
+    "group-size" : "4/5",
+    "time" : "11:00-12:30",
+    "id" : "13",
+    "name" : "Plateia Mediterranean Kitchen Bar",
+    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fgreek.jpeg?alt=media&token=591b0309-0a63-4900-90c0-c6df78bdc847"
+  }, {
+    "cuisine" : "Greek",
+    "date" : "2020-04-22",
+    "group-size" : "6/10",
+    "time" : "11:30-12:30",
+    "id" : "14",
+    "name" : "Demetri's Greek Restaurant",
+    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fterra.jpg?alt=media&token=9e8917f2-ea7f-4bac-a8a2-150f4ccf6043"
+  }, {
+    "cuisine" : "Chinese",
+    "date" : "2020-05-01",
+    "group-size" : "5/10",
+    "time" : "17:00-18:00",
+    "id" : "15",
+    "name" : "Peppercorns Kitchen",
+    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fpeppercorn.png?alt=media&token=cb3571c4-1347-474d-8899-2073e3ae5b7f"
+  } ],
+  "title" : "Events: Eating Together"
+}
