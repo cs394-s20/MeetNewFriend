@@ -10,6 +10,7 @@ const ref = storage.child("img").child("buffalo.jpg");
 
 const Restaurant = ({ event }) => {
     const [image, setImage] = useState("");
+    const [joined, setJoined] = useState(false);
 
 
     useEffect(() => {
@@ -28,6 +29,10 @@ const Restaurant = ({ event }) => {
 
     console.log("inside function");
     console.log(image);
+
+    const handleJoin = () => {
+        setJoined(!joined);
+    }
 
     return (
         <li>
@@ -58,8 +63,20 @@ const Restaurant = ({ event }) => {
                         {event["time"]}
                     </Field>
 
-                    <Button color="warning" size="small">
-                        join
+                    <Button color={(() => {
+                    switch (joined) {
+                        case true:   return "success";
+                        case false:  return "warning";
+                        default:     return "warning";
+                    }
+                    })()} size="small" onClick={()=>handleJoin()}>
+                    {(() => {
+                    switch (joined) {
+                        case true:   return "Leave Event";
+                        case false:  return "Join";
+                        default:     return "Join";
+                    }
+                    })()}
                 </Button>
 
                 </Card.Content>
