@@ -39,7 +39,7 @@ const Restaurant = ({ event }) => {
         <Card>
             <Card.Image>
                 {/*<img src={require("./buffalo.jpg")} alt="Logo"/>;*/}
-                <img src={image} alt="Logo"/>
+                <img src={event.imageURL} alt="Logo"/>
             </Card.Image>
 
             <Card.Header>
