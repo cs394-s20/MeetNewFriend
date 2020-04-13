@@ -14,7 +14,7 @@ const Preference = ({ state }) => (
         { Object.values(cuisine)
             .map(value =>
                 <Button key={value}
-                        color={ buttonColor(value === state.Cuisine) }
+                        color={ buttonColor(value === state.cuisine) }
                         onClick={ () => state.setCuisine(value) } >
                     { value }
                 </Button>

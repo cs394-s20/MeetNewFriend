@@ -1,0 +1,109 @@
+{
+  "events" : [ null, {
+    "cuisine" : "Italian",
+    "date" : "2020-04-20",
+    "group-size" : "5/10",
+    "time" : "11:00-11:50",
+    "id" : "1",
+    "name" : "Le Peep"
+  }, {
+    "cuisine" : "Italian",
+    "date" : "2020-04-18",
+    "group-size" : "7/10",
+    "time" : "10:00-10:50",
+    "id" : "2",
+    "name" : "Terra & Vine"
+  }, {
+    "cuisine" : "Mexican",
+    "date" : "2020-05-23",
+    "group-size" : "3/6",
+    "time" : "13:00-13:50",
+    "id" : "3",
+    "name" : "Taco Diablo"
+  }, {
+    "cuisine" : "Mexican",
+    "date" : "2020-05-25",
+    "group-size" : "2/5",
+    "time" : "12:30-13:50",
+    "id" : "4",
+    "name" : "That Little Mexican Cafe"
+  }, {
+    "cuisine" : "American",
+    "date" : "2020-04-18",
+    "group-size" : "3/10",
+    "time" : "15:00-15:50",
+    "id" : "5",
+    "name" : "Buffalo Joe's"
+  }, {
+    "cuisine" : "Italian",
+    "date" : "2020-04-29",
+    "group-size" : "2/5",
+    "time" : "15:30-16:50",
+    "id" : "6",
+    "name" : "Gigio's Pizzeria"
+  }, {
+    "cuisine" : "Mediterranean",
+    "date" : "2020-04-27",
+    "group-size" : "2/7",
+    "time" : "14:00-15:20",
+    "id" : "7",
+    "name" : "Olive Mountain Grill"
+  }, {
+    "cuisine" : "Italian",
+    "date" : "2020-04-27",
+    "groupSize" : "1/5",
+    "time" : "9:30-10:50",
+    "id" : "8",
+    "name" : "Giardanos"
+  }, {
+    "cuisine" : "American",
+    "date" : "2020-06-01",
+    "group-size" : "6/8",
+    "time" : "12:30-13:50",
+    "id" : "9",
+    "name" : "Farmhouse Evanston"
+  }, {
+    "cuisine" : "Mediterranean",
+    "date" : "2020-06-01",
+    "group-size" : "4/5",
+    "time" : "11:30-13:50",
+    "id" : "10",
+    "name" : "Five & Dine"
+  }, {
+    "cuisine" : "French",
+    "date" : "2020-04-21",
+    "group-size" : "2/10",
+    "time" : "6:30-8:00",
+    "id" : "11",
+    "name" : "Chez Benoit Bistro"
+  }, {
+    "cuisine" : "British",
+    "date" : "2020-04-13",
+    "group-size" : "15/20",
+    "time" : "21:00-23:00",
+    "id" : "12",
+    "name" : "The Irish Mill"
+  }, {
+    "cuisine" : "Greek",
+    "date" : "2020-04-12",
+    "group-size" : "4/5",
+    "time" : "11:00-12:30",
+    "id" : "13",
+    "name" : "Plateia Mediterranean Kitchen Bar"
+  }, {
+    "cuisine" : "Greek",
+    "date" : "2020-04-22",
+    "group-size" : "6/10",
+    "time" : "11:30-12:30",
+    "id" : "14",
+    "name" : "Demetri's Greek Restaurant"
+  }, {
+    "cuisine" : "Chinese",
+    "date" : "2020-05-01",
+    "group-size" : "5/10",
+    "time" : "17:00-18:00",
+    "id" : "15",
+    "name" : "Peppercorns Kitchen"
+  } ],
+  "title" : "Events: Eating Together"
+}

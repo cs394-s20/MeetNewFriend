@@ -6,7 +6,7 @@ import Preference from "./Preference/Preference";
 
 const RestaurantList = ({ events }) => {
     const [cuisine, setCuisine] = useState('American');
-    const matchedRestaurants = events.filter(event => cuisine === event.Cuisine);
+    const matchedRestaurants = events.filter(event => cuisine === event.cuisine);
     if (matchedRestaurants){console.log("there are restaurants available")} else {console.log("no restaurant available")}
     console.log(events);
 
