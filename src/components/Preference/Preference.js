@@ -23,8 +23,6 @@ const Preference = ({ state }) => (
                         </Dropdown.Item>
                     )
                 }
-                    {/*<Dropdown.Item> 1 </Dropdown.Item>*/}
-                    {/*<Dropdown.Item> 2 </Dropdown.Item>*/}
             </Dropdown.Menu>
         </Dropdown>
 
