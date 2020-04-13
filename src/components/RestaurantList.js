@@ -11,7 +11,19 @@ const RestaurantList = ({ events }) => {
 
     const ANDMatch = event => cuisine === event.cuisine;
 
-    const matchedRestaurants = events.filter(ANDMatch);
+    const matchedRestaurants = (events) => {
+        if (cuisine === 'Pick Cuisine') {
+            return events;
+        }
+        else {
+            return events.filter(ANDMatch);
+        }
+    };
+    // const matchedRestaurants = events;
+
+    console.log("results!!!!");
+    console.log(matchedRestaurants);
+
 
     if (matchedRestaurants) { console.log("there are restaurants available") } else { console.log("no restaurant available") }
     console.log(events);
@@ -26,7 +38,7 @@ const RestaurantList = ({ events }) => {
                     <center>
                         <div class="col-md-6 restaurant-info" alt="Max-width 100%">
                             <ul class='restaurant'>
-                                {matchedRestaurants.map(event =>
+                                {matchedRestaurants(events).map(event =>
                                     <Restaurant key={event.id} event={event} />)}
                             </ul>
                         </div>
