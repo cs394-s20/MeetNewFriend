@@ -19,10 +19,15 @@ const RestaurantList = ({ events }) => {
             return events.filter(ANDMatch);
         }
     };
-    // const matchedRestaurants = events;
 
-    console.log("results!!!!");
-    console.log(matchedRestaurants);
+    const availableWords = (restaurantList) => {
+        if (restaurantList.length > 0) {
+            return "Available restaurants:";
+        }
+        else {
+            return "No restaurants are available";
+        }
+    };
 
 
     if (matchedRestaurants) { console.log("there are restaurants available") } else { console.log("no restaurant available") }
@@ -33,7 +38,8 @@ const RestaurantList = ({ events }) => {
             <Preference state={{ cuisine, setCuisine,maxsize,setMaxSize }} />
 
                 <div className='restaurant-list'>
-                    Available restaurants:
+                    {/*Available restaurants:*/}
+                    {availableWords(matchedRestaurants(events))}
                 {/* <div class="row"> */}
                     <center>
                         <div class="col-md-6 restaurant-info" alt="Max-width 100%">
