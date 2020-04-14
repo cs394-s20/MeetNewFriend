@@ -63,21 +63,21 @@ const Restaurant = ({ event }) => {
                         {event["time"]}
                     </Field>
 
-                    <Button color={(() => {
-                    switch (joined) {
-                        case true:   return "success";
-                        case false:  return "warning";
-                        default:     return "warning";
-                    }
-                    })()} size="small" onClick={()=>handleJoin()}>
-                    {(() => {
-                    switch (joined) {
-                        case true:   return "Leave Event";
-                        case false:  return "Join";
-                        default:     return "Join";
-                    }
-                    })()}
-                </Button>
+                {/*    <Button color={(() => {*/}
+                {/*    switch (joined) {*/}
+                {/*        case true:   return "success";*/}
+                {/*        case false:  return "warning";*/}
+                {/*        default:     return "warning";*/}
+                {/*    }*/}
+                {/*    })()} size="small" onClick={()=>handleJoin()}>*/}
+                {/*    {(() => {*/}
+                {/*    switch (joined) {*/}
+                {/*        case true:   return "Leave Event";*/}
+                {/*        case false:  return "Join";*/}
+                {/*        default:     return "Join";*/}
+                {/*    }*/}
+                {/*    })()}*/}
+                {/*</Button>*/}
 
                 </Card.Content>
             </Card>
