@@ -80,9 +80,8 @@ const Restaurant = ({ event }) => {
                 </Button>
 
                 </Card.Content>
-
-
             </Card>
+            <br/>
         </li>
     );
 
