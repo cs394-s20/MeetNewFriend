@@ -12,7 +12,7 @@ const RestaurantList = ({ events }) => {
     const ANDMatch = event => cuisine === event.cuisine;
 
     const matchedRestaurants = (events) => {
-        if (cuisine === 'Pick Cuisine') {
+        if (cuisine === 'Pick Cuisine' || cuisine === "All") {
             return events;
         }
         else {
@@ -38,7 +38,6 @@ const RestaurantList = ({ events }) => {
             <Preference state={{ cuisine, setCuisine,maxsize,setMaxSize }} />
 
                 <div className='restaurant-list'>
-                    {/*Available restaurants:*/}
                     {availableWords(matchedRestaurants(events))}
                 {/* <div class="row"> */}
                     <center>
