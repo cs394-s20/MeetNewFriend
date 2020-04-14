@@ -8,17 +8,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const HeaderBar = ({ title }) => (
 <Navbar color='primary' variant="dark">
 <Navbar.Brand>
-    
+
     <Container>
-    <Button>
-        Back
-    </Button> 
-    </Container>   
+    {/*<Button>*/}
+    {/*    Back*/}
+    {/*</Button> */}
+    </Container>
     {title}
 
 
-</Navbar.Brand>  
-</Navbar>        
+</Navbar.Brand>
+</Navbar>
 );
 
 export default HeaderBar;

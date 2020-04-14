@@ -31,23 +31,23 @@ const Preference = ({ state }) => {
                 </Dropdown.Menu>
             </Dropdown>
 
-            <Dropdown>
-                <Dropdown.Trigger> <Button color="info"> Time &#9660; </Button> </Dropdown.Trigger>
-                <Dropdown.Menu>
-                <Dropdown.Item>
-                    <TimePicker/>
-                </Dropdown.Item>
-                </Dropdown.Menu>
-            </Dropdown>
+            {/*<Dropdown>*/}
+            {/*    <Dropdown.Trigger> <Button color="info"> Time &#9660; </Button> </Dropdown.Trigger>*/}
+            {/*    <Dropdown.Menu>*/}
+            {/*    <Dropdown.Item>*/}
+            {/*        <TimePicker/>*/}
+            {/*    </Dropdown.Item>*/}
+            {/*    </Dropdown.Menu>*/}
+            {/*</Dropdown>*/}
 
-            <Dropdown>
-                <Dropdown.Trigger> <Button color="info"> Size &#9660; </Button> </Dropdown.Trigger>
-                <Dropdown.Menu>
-                <Dropdown.Item>
-                    <NumericInput  min={2} max={15} value={3} onClick={ () => state.setMaxSize(10) }/>
-                </Dropdown.Item>
-                </Dropdown.Menu>
-            </Dropdown>
+            {/*<Dropdown>*/}
+            {/*    <Dropdown.Trigger> <Button color="info"> Size &#9660; </Button> </Dropdown.Trigger>*/}
+            {/*    <Dropdown.Menu>*/}
+            {/*    <Dropdown.Item>*/}
+            {/*        <NumericInput  min={2} max={15} value={3} onClick={ () => state.setMaxSize(10) }/>*/}
+            {/*    </Dropdown.Item>*/}
+            {/*    </Dropdown.Menu>*/}
+            {/*</Dropdown>*/}
         </div>)
 };
 
