@@ -6,7 +6,8 @@
     "time" : "11:00-11:50",
     "id" : "1",
     "name" : "Le Peep",
-    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1",
+    "description": "If you enjoy brunches, this is the place for you. Why settle for iHop when you can go with NU CS students to get the finest French Toast in Evanston?!"
   }, {
     "cuisine" : "Italian",
     "date" : "2020-04-18",
@@ -14,7 +15,8 @@
     "time" : "10:00-10:50",
     "id" : "2",
     "name" : "Terra & Vine",
-    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fbuffalo.jpg?alt=media&token=ed14f7b4-53c9-4ff9-a9db-7787bced5231"
+    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fbuffalo.jpg?alt=media&token=ed14f7b4-53c9-4ff9-a9db-7787bced5231",
+    "description": "Join us for some cheese and wine night (if you are of age). Dress code is formal so break out the suits and dresses."
   }, {
     "cuisine" : "Mexican",
     "date" : "2020-05-23",
@@ -22,7 +24,8 @@
     "time" : "13:00-13:50",
     "id" : "3",
     "name" : "Taco Diablo",
-    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Ftaco.jpg?alt=media&token=6a8489ed-ed72-4ddb-ab97-7d85ecf7fed3"
+    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Ftaco.jpg?alt=media&token=6a8489ed-ed72-4ddb-ab97-7d85ecf7fed3",
+    "description": "It’s Taco Tuesday! We will be putting the infamous “Diablo Taco” to the test. Bring your taste buds for this fiery meal!"
   }, {
     "cuisine" : "Mexican",
     "date" : "2020-05-25",
@@ -30,7 +33,8 @@
     "time" : "12:30-13:50",
     "id" : "4",
     "name" : "That Little Mexican Cafe",
-    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fmexican.jpg?alt=media&token=d3ab63e8-cc56-4700-be85-f89e88f16c09"
+    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fmexican.jpg?alt=media&token=d3ab63e8-cc56-4700-be85-f89e88f16c09",
+    "description": "Guac fanatics assemble! Come hang with us as we check out this new Mexican food spot and get to know more freshmen on campus."
   }, {
     "cuisine" : "American",
     "date" : "2020-04-18",
@@ -38,7 +42,8 @@
     "time" : "15:00-15:50",
     "id" : "5",
     "name" : "Buffalo Joe's",
-    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fbuffalo.jpg?alt=media&token=ed14f7b4-53c9-4ff9-a9db-7787bced5231"
+    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fbuffalo.jpg?alt=media&token=ed14f7b4-53c9-4ff9-a9db-7787bced5231",
+    "description": "We’re going out for Wing Night Wednesday. All you can eat 50 cent wings with the post-grad students. Who says no to 50 cent wings? Not you!"
   }, {
     "cuisine" : "Italian",
     "date" : "2020-04-29",
@@ -46,7 +51,8 @@
     "time" : "15:30-16:50",
     "id" : "6",
     "name" : "Gigio's Pizzeria",
-    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fgiordanos.jpg?alt=media&token=b4deb63a-38de-4d6c-a40b-26aa80f754b9"
+    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fgiordanos.jpg?alt=media&token=b4deb63a-38de-4d6c-a40b-26aa80f754b9",
+    "description": "Thin and deep dish lovers in this group. As long as you like pizza and want to meet new undergrads, come through!"
   }, {
     "cuisine" : "Mediterranean",
     "date" : "2020-04-27",
@@ -54,7 +60,8 @@
     "time" : "14:00-15:20",
     "id" : "7",
     "name" : "Olive Mountain Grill",
-    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Folive.jpg?alt=media&token=3f9e9b3a-2aad-469a-af26-8d642b3fba31"
+    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Folive.jpg?alt=media&token=3f9e9b3a-2aad-469a-af26-8d642b3fba31",
+    "description": "Join the MSA as we check out Olive Mountain for their famous gyro. Food is halal certified if that is a concern."
   }, {
     "cuisine" : "Italian",
     "date" : "2020-04-27",
@@ -62,7 +69,8 @@
     "time" : "9:30-10:50",
     "id" : "8",
     "name" : "Giardanos",
-    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fbuffalo.jpg?alt=media&token=ed14f7b4-53c9-4ff9-a9db-7787bced5231"
+    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fbuffalo.jpg?alt=media&token=ed14f7b4-53c9-4ff9-a9db-7787bced5231",
+    "description": "You haven’t experienced Chicago until you have Giardanos Deep Dish pizza. We’ll be meeting up with local Chicago natives at NU to enjoy this meal."
   }, {
     "cuisine" : "American",
     "date" : "2020-06-01",
@@ -70,7 +78,8 @@
     "time" : "12:30-13:50",
     "id" : "9",
     "name" : "Farmhouse Evanston",
-    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Ffarmhouse.jpg?alt=media&token=9c976ebb-bf27-4f4a-bf7d-76f721eb08ad"
+    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Ffarmhouse.jpg?alt=media&token=9c976ebb-bf27-4f4a-bf7d-76f721eb08ad",
+    "description": "IEEE group members are hosting a meal for anyone interested in joining the club. Come enjoy some local Evanston meal and learn more about IEEE!"
   }, {
     "cuisine" : "Mediterranean",
     "date" : "2020-06-01",
@@ -78,7 +87,8 @@
     "time" : "11:30-13:50",
     "id" : "10",
     "name" : "Five & Dine",
-    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Ffiveanddine.jpg?alt=media&token=b802bffb-c7c1-4fac-87fc-59fdbbf56879"
+    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Ffiveanddine.jpg?alt=media&token=b802bffb-c7c1-4fac-87fc-59fdbbf56879",
+    "description": "Group of transfer students craving Mediterranean. All are welcome."
   }, {
     "cuisine" : "French",
     "date" : "2020-04-21",
@@ -86,7 +96,8 @@
     "time" : "6:30-8:00",
     "id" : "11",
     "name" : "Chez Benoit Bistro",
-    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Ffrance.jpg?alt=media&token=66898aee-32f5-4535-9b93-51ecf43e5dd9"
+    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Ffrance.jpg?alt=media&token=66898aee-32f5-4535-9b93-51ecf43e5dd9",
+    "description": "Trying new cuisine and meals such as duck. Join if you would like to meet Medill and SESP students from all levels."
   }, {
     "cuisine" : "British",
     "date" : "2020-04-13",
@@ -94,7 +105,8 @@
     "time" : "21:00-23:00",
     "id" : "12",
     "name" : "The Irish Mill",
-    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fenglish.jpg?alt=media&token=444d6ba9-c4c4-496b-8c68-9e72bfaefbb9"
+    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fenglish.jpg?alt=media&token=444d6ba9-c4c4-496b-8c68-9e72bfaefbb9",
+    "description": "This event is for you guys who want to enjoy a fun night of trying different Irish Whiskey and food. Group is 21+ but anyone can join if they don’t want to drink."
   }, {
     "cuisine" : "Greek",
     "date" : "2020-04-12",
@@ -102,7 +114,8 @@
     "time" : "11:00-12:30",
     "id" : "13",
     "name" : "Plateia Mediterranean Kitchen Bar",
-    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fgreek.jpeg?alt=media&token=591b0309-0a63-4900-90c0-c6df78bdc847"
+    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fgreek.jpeg?alt=media&token=591b0309-0a63-4900-90c0-c6df78bdc847",
+    "description": "Event created and is being hosted by the MCC for anyone looking to learn more about the different cultures at NU. Please don’t hesitate to join. Strangers welcome!"
   }, {
     "cuisine" : "Greek",
     "date" : "2020-04-22",
@@ -110,7 +123,8 @@
     "time" : "11:30-12:30",
     "id" : "14",
     "name" : "Demetri's Greek Restaurant",
-    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fterra.jpg?alt=media&token=9e8917f2-ea7f-4bac-a8a2-150f4ccf6043"
+    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fterra.jpg?alt=media&token=9e8917f2-ea7f-4bac-a8a2-150f4ccf6043",
+    "description": "If you are interested in hearing about Master’s Programs like Kellogg, come check us out and join us for a big fat Greek meal!"
   }, {
     "cuisine" : "Chinese",
     "date" : "2020-05-01",
@@ -118,7 +132,8 @@
     "time" : "17:00-18:00",
     "id" : "15",
     "name" : "Peppercorns Kitchen",
-    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fpeppercorn.png?alt=media&token=cb3571c4-1347-474d-8899-2073e3ae5b7f"
+    "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fpeppercorn.png?alt=media&token=cb3571c4-1347-474d-8899-2073e3ae5b7f",
+    "description": "Just a bunch of hungry undergrads looking to try to new cuisines. All levels of graduating classes are welcomed to join."
   } ],
   "title" : "Events: Eating Together"
 }
