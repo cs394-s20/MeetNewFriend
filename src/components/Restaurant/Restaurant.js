@@ -103,13 +103,10 @@ const Restaurant = ({ event }) => {
                         <Label> for </Label>
                         {timeInfo[2]}
                     </Field>
-<<<<<<< HEAD
                     
 
                     
                     
-=======
->>>>>>> origin
 
                 {/*    <Button color={(() => {*/}
                 {/*    switch (joined) {*/}
