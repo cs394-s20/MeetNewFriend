@@ -14,7 +14,7 @@ const Restaurant = ({ event }) => {
     const meals = ['Breakfast','Lunch','Dinner'];
 
     const matchMeal = duration => {
-        
+
         let meal = null;
 
         let times =  duration.split("-");
@@ -37,7 +37,7 @@ const Restaurant = ({ event }) => {
             meal = meals[2];
         }
 
-        
+
         let durationHour = (endTimeHour-startTimeHour).toString();
         let durationMinute = (endTimeMinute-startTimeMinute).toString();
         let durationFormat = (durationHour==="0") ? (durationMinute+"min") :
@@ -74,7 +74,7 @@ const Restaurant = ({ event }) => {
     return (
         <li>
             <Card>
-                <Card.Image size="medium">
+                <Card.Image>
                     <img src={event.imageURL} style={{ width: 300, height: 200 }} alt="Logo" />
                 </Card.Image>
 
@@ -103,10 +103,14 @@ const Restaurant = ({ event }) => {
                         <Label> for </Label>
                         {timeInfo[2]}
                     </Field>
-                    
 
-                    
-                    
+                    <Field>
+                        {event['description']}
+                    </Field>
+
+
+
+
 
                 {/*    <Button color={(() => {*/}
                 {/*    switch (joined) {*/}
@@ -125,6 +129,7 @@ const Restaurant = ({ event }) => {
                 {/*</Button>*/}
 
                 </Card.Content>
+
             </Card>
             <br/>
         </li>
