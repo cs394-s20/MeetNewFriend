@@ -66,7 +66,6 @@
   width: 80% !important;
   margin-left: 0px;
   margin-right: 0px;
-  position: absolute;
 }
 
 .restaurant-info .card {
@@ -86,10 +85,10 @@
 }
 
 .card-image img {
-    left: 0px;
-    top: 40px;
-    height: 100px;
-    position: absolute;
+  left: 0px;
+  top: 55px;
+  height: 100px;
+  position: absolute;
 }
 
 .card-header {
@@ -98,13 +97,14 @@
 }
 
 .card-content {
-  height: 200px;
+  height: 230px;
 }
 
 .field {
   float: right;
   display: block;
-  width: 70%;
+  width: 60%;
+  text-align: left;
 }
 
 .field p {
