@@ -97,7 +97,7 @@
 }
 
 .card-content {
-  height: 230px;
+  height: auto;
 }
 
 .field {
@@ -122,6 +122,9 @@
   bottom: 4%;
 }
 
+ul {
+  float: left !important;
+}
 
 @keyframes App-logo-spin {
   from {

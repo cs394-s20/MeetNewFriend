@@ -12,6 +12,7 @@ const Restaurant = ({ event }) => {
     const [image, setImage] = useState("");
     const [joined, setJoined] = useState(false);
     const meals = ['Breakfast','Lunch','Dinner'];
+    const [show, setShow] = useState(false);
 
     const matchMeal = duration => {
 
@@ -92,8 +93,22 @@ const Restaurant = ({ event }) => {
 
                     </Field>
                     <Field>
+                        {/* make p tag not be at the right */}
                         <Label>Group Size: </Label>
-                        {event["group-size"]}
+                        <p onClick={()=> setShow(!show)}> {event["group-size"]} people</p>
+                        
+                        {/* uncoment code when databse has fields
+                            make list of people look nicer
+                        */}
+                        { show ? <Field>
+                            <ul>
+                            {/* {event["people"].map((person) => {
+                                <li>{person}</li>
+                            })} */}
+                            {event["time"]}
+                            </ul>
+                        </Field> : null}
+                        
                     </Field>
                     <Field>
                         <Label> Time: </Label>
@@ -107,27 +122,6 @@ const Restaurant = ({ event }) => {
                     <Field>
                         {event['description']}
                     </Field>
-
-
-
-
-
-                {/*    <Button color={(() => {*/}
-                {/*    switch (joined) {*/}
-                {/*        case true:   return "success";*/}
-                {/*        case false:  return "warning";*/}
-                {/*        default:     return "warning";*/}
-                {/*    }*/}
-                {/*    })()} size="small" onClick={()=>handleJoin()}>*/}
-                {/*    {(() => {*/}
-                {/*    switch (joined) {*/}
-                {/*        case true:   return "Leave Event";*/}
-                {/*        case false:  return "Join";*/}
-                {/*        default:     return "Join";*/}
-                {/*    }*/}
-                {/*    })()}*/}
-                {/*</Button>*/}
-
                 </Card.Content>
 
             </Card>
