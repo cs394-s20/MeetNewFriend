@@ -72,6 +72,8 @@ const Restaurant = ({ event }) => {
 
     const timeInfo = matchMeal(event["time"]);
 
+    const group = event["people"].map((person) => <li key={person}>{person}</li>);
+
     return (
         <li>
             <Card>
@@ -100,12 +102,9 @@ const Restaurant = ({ event }) => {
                         {/* uncoment code when databse has fields
                             make list of people look nicer
                         */}
-                        { show ? <Field>
+                         { show ? <Field>
                             <ul>
-                            {/* {event["people"].map((person) => {
-                                <li>{person}</li>
-                            })} */}
-                            {event["time"]}
+                                {group}
                             </ul>
                         </Field> : null}
                         
