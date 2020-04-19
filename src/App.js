@@ -8,11 +8,13 @@ import React, { useState, useEffect } from 'react';
 import RestaurantList from "./components/RestaurantList";
 import HeaderBar from "./components/HeaderBar";
 
+
 const db = firebase.database().ref();
 
 const App = () => {
   const [schedule, setSchedule] = useState({ title: '', events: [] });
   const [currPage, setCurrPage] = useState("events");
+
 
   useEffect(() => {
     const handleData = snap => {
