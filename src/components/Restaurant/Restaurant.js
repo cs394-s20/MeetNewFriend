@@ -2,7 +2,6 @@ import { Button, Card, Field, Label } from "rbx";
 import React, { useState, useEffect } from 'react';
 import firebase from '../../../src/shared/firebase.js'
 import "firebase/storage";
-// import img from "public/img/buffalo.jpg";
 
 const storage = firebase.storage().ref();
 const ref = storage.child("img").child("buffalo.jpg");
@@ -46,7 +45,7 @@ const Restaurant = ({ event }) => {
 
         //const time = duration.parse('-');
         return [meal,startTime,durationFormat];
-    }
+    };
 
 
     useEffect(() => {

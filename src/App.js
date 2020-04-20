@@ -7,6 +7,9 @@ import { Button, Container, Title } from 'rbx';
 import React, { useState, useEffect } from 'react';
 import RestaurantList from "./components/RestaurantList";
 import HeaderBar from "./components/HeaderBar";
+import CreateEvent from "./components/CreateEvent";
+import Popup from "reactjs-popup";
+import PopupWindow from "./components/PopupWindow";
 
 
 const db = firebase.database().ref();
@@ -33,9 +36,11 @@ const App = () => {
       return (
       <Container>
         <HeaderBar title={ schedule.title } />
+            <PopupWindow/>
         <RestaurantList events={ schedule.events } />
       </Container>
-      );
+
+    );
     }
     else if (currPage === "home"){
       return (
@@ -44,7 +49,7 @@ const App = () => {
         </Container>
       );
     }
-  }
+  };
 
   const page = handlePage();
 
