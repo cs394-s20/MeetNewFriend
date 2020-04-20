@@ -66,7 +66,6 @@
   width: 80% !important;
   margin-left: 0px;
   margin-right: 0px;
-  position: absolute;
 }
 
 .restaurant-info .card {
@@ -86,10 +85,10 @@
 }
 
 .card-image img {
-    left: 0px;
-    top: 40px;
-    height: 100px;
-    position: absolute;
+  left: 0px;
+  top: 55px;
+  height: 100px;
+  position: absolute;
 }
 
 .card-header {
@@ -98,20 +97,21 @@
 }
 
 .card-content {
-  height: 200px;
+  height: auto;
 }
 
-.field {
+.card-content .field {
   float: right;
   display: block;
-  width: 70%;
+  width: 60%;
+  text-align: left;
 }
 
-.field p {
+.card-content .field p {
   float: right;
 }
 
-.field label {
+.card-content .field label {
   display: inline;
 }
 
@@ -120,6 +120,50 @@
   position: absolute;
   right: 2%;
   bottom: 4%;
+}
+
+
+.modal {
+  font-size: 40px;
+  width: 100%;
+}
+.modal > .header {
+  width: 100%;
+  border-bottom: 1px solid gray;
+  font-size: 18px;
+  text-align: center;
+  padding: 5px;
+}
+.modal > .content {
+  width: 100%;
+  padding: 10px 5px;
+}
+
+.field .is-horizontal {
+  float: initial;
+}
+
+.is-horizontal .field-label {
+  display: flex;
+}
+
+.field-label label{
+  width: 35%;
+  text-align: right;
+  font-size: 1.1rem;
+}
+
+.field-label .label {
+  font-size: 1.1rem;
+  margin-right: 2%;
+}
+
+.popup_create li {
+  margin-bottom: 1%;
+}
+
+.popup-content .container {
+  margin-top: 3%;
 }
 
 

@@ -8,10 +8,12 @@ import { Button,Navbar, Container, Title } from 'rbx';
 import React, { useState, useEffect } from 'react';
 import RestaurantList from "./components/RestaurantList";
 import HeaderBar from "./components/HeaderBar";
+
 import Login from './components/Login';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import 'firebase/auth';
+
 
 const db = firebase.database().ref();
 
@@ -33,6 +35,7 @@ const App = () => {
         alert("Couldn't log out. Try again.");
       });
   };
+
 
   useEffect(() => {
 
@@ -62,6 +65,7 @@ const App = () => {
         </Switch>
       </Router>
     ));
+
 };
 
 

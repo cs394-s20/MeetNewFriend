@@ -2,7 +2,6 @@ import { Button, Card, Field, Label } from "rbx";
 import React, { useState, useEffect } from 'react';
 import firebase from '../../../src/shared/firebase.js'
 import "firebase/storage";
-// import img from "public/img/buffalo.jpg";
 
 const storage = firebase.storage().ref();
 const ref = storage.child("img").child("buffalo.jpg");
@@ -12,9 +11,10 @@ const Restaurant = ({ event }) => {
     const [image, setImage] = useState("");
     const [joined, setJoined] = useState(false);
     const meals = ['Breakfast','Lunch','Dinner'];
+    const [show, setShow] = useState(false);
 
     const matchMeal = duration => {
-        
+
         let meal = null;
 
         let times =  duration.split("-");
@@ -37,7 +37,7 @@ const Restaurant = ({ event }) => {
             meal = meals[2];
         }
 
-        
+
         let durationHour = (endTimeHour-startTimeHour).toString();
         let durationMinute = (endTimeMinute-startTimeMinute).toString();
         let durationFormat = (durationHour==="0") ? (durationMinute+"min") :
@@ -45,7 +45,7 @@ const Restaurant = ({ event }) => {
 
         //const time = duration.parse('-');
         return [meal,startTime,durationFormat];
-    }
+    };
 
 
     useEffect(() => {
@@ -71,10 +71,12 @@ const Restaurant = ({ event }) => {
 
     const timeInfo = matchMeal(event["time"]);
 
+    const group = event["people"].map((person) => <li key={person}>{person}</li>);
+
     return (
         <li>
             <Card>
-                <Card.Image size="medium">
+                <Card.Image>
                     <img src={event.imageURL} style={{ width: 300, height: 200 }} alt="Logo" />
                 </Card.Image>
 
@@ -92,8 +94,19 @@ const Restaurant = ({ event }) => {
 
                     </Field>
                     <Field>
+                        {/* make p tag not be at the right */}
                         <Label>Group Size: </Label>
-                        {event["group-size"]}
+                        <p onClick={()=> setShow(!show)}> {event["group-size"]} people</p>
+                        
+                        {/* uncoment code when databse has fields
+                            make list of people look nicer
+                        */}
+                         { show ? <Field>
+                            <ul>
+                                {group}
+                            </ul>
+                        </Field> : null}
+                        
                     </Field>
                     <Field>
                         <Label> Time: </Label>
@@ -103,28 +116,12 @@ const Restaurant = ({ event }) => {
                         <Label> for </Label>
                         {timeInfo[2]}
                     </Field>
-                    
 
-                    
-                    
-
-                {/*    <Button color={(() => {*/}
-                {/*    switch (joined) {*/}
-                {/*        case true:   return "success";*/}
-                {/*        case false:  return "warning";*/}
-                {/*        default:     return "warning";*/}
-                {/*    }*/}
-                {/*    })()} size="small" onClick={()=>handleJoin()}>*/}
-                {/*    {(() => {*/}
-                {/*    switch (joined) {*/}
-                {/*        case true:   return "Leave Event";*/}
-                {/*        case false:  return "Join";*/}
-                {/*        default:     return "Join";*/}
-                {/*    }*/}
-                {/*    })()}*/}
-                {/*</Button>*/}
-
+                    <Field>
+                        {event['description']}
+                    </Field>
                 </Card.Content>
+
             </Card>
             <br/>
         </li>
