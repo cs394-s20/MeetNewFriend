@@ -11,11 +11,13 @@ import CreateEvent from "./components/CreateEvent";
 import Popup from "reactjs-popup";
 import PopupWindow from "./components/PopupWindow";
 
+
 const db = firebase.database().ref();
 
 const App = () => {
   const [schedule, setSchedule] = useState({ title: '', events: [] });
   const [currPage, setCurrPage] = useState("events");
+
 
   useEffect(() => {
     const handleData = snap => {

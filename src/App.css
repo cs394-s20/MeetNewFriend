@@ -97,7 +97,7 @@
 }
 
 .card-content {
-  height: 230px;
+  height: auto;
 }
 
 .card-content .field {
@@ -121,6 +121,7 @@
   right: 2%;
   bottom: 4%;
 }
+
 
 .modal {
   font-size: 40px;
@@ -164,7 +165,6 @@
 .popup-content .container {
   margin-top: 3%;
 }
-
 
 
 @keyframes App-logo-spin {
