@@ -4,15 +4,14 @@ import Popup from "reactjs-popup";
 import React from "react";
 
 var contentStyle = {
-    width: "40%",
+    width: "70%",
     background: "orange",
-
 };
 
 
 const PopupWindow = () => {
     return (
-        <Popup contentStyle={contentStyle} trigger={<Button> Create Event </Button>} position="right center" modal closeOnDocumentClick>
+        <Popup contentStyle={contentStyle} trigger={<Button> Create Event </Button>} position="bottom center" modal closeOnDocumentClick>
             <CreateEvent>Popup content here !!</CreateEvent>
         </Popup>
     );

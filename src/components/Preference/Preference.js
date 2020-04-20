@@ -2,12 +2,12 @@ import {Button,InputNumber, Dropdown} from "rbx";
 import TimePicker from 'react-time-picker';
 import NumericInput from 'react-numeric-input';
 import React, {useState} from "react";
+import cuisine from '../../shared/data';
 
 const buttonColor = selected => (
     selected ? 'success' : null
 );
 
-const cuisine = {O: 'All', A: 'American', F: 'French', B: 'British', G: 'Greek', D: 'Mediterranean', M: 'Mexican', C: 'Chinese', I: 'Italian', N: 'Indian', K: 'Korean'};
 
 const Preference = ({ state }) => {
 

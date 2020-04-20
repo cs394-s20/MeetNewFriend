@@ -122,6 +122,23 @@
   bottom: 4%;
 }
 
+.modal {
+  font-size: 40px;
+  width: 100%;
+}
+.modal > .header {
+  width: 100%;
+  border-bottom: 1px solid gray;
+  font-size: 18px;
+  text-align: center;
+  padding: 5px;
+}
+.modal > .content {
+  width: 100%;
+  padding: 10px 5px;
+}
+
+
 
 @keyframes App-logo-spin {
   from {
