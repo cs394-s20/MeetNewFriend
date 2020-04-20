@@ -100,18 +100,18 @@
   height: 230px;
 }
 
-.field {
+.card-content .field {
   float: right;
   display: block;
   width: 60%;
   text-align: left;
 }
 
-.field p {
+.card-content .field p {
   float: right;
 }
 
-.field label {
+.card-content .field label {
   display: inline;
 }
 
@@ -136,6 +136,33 @@
 .modal > .content {
   width: 100%;
   padding: 10px 5px;
+}
+
+.field .is-horizontal {
+  float: initial;
+}
+
+.is-horizontal .field-label {
+  display: flex;
+}
+
+.field-label label{
+  width: 35%;
+  text-align: right;
+  font-size: 1.1rem;
+}
+
+.field-label .label {
+  font-size: 1.1rem;
+  margin-right: 2%;
+}
+
+.popup_create li {
+  margin-bottom: 1%;
+}
+
+.popup-content .container {
+  margin-top: 3%;
 }
 
 

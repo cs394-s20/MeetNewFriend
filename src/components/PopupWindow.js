@@ -4,7 +4,7 @@ import Popup from "reactjs-popup";
 import React from "react";
 
 var contentStyle = {
-    width: "70%",
+    width: "40%",
     background: "orange",
 };
 
