@@ -45,7 +45,7 @@ const Restaurant = ({ event }) => {
 
         //const time = duration.parse('-');
         return [meal,startTime,durationFormat];
-    }
+    };
 
 
     useEffect(() => {

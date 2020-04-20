@@ -9,15 +9,13 @@ import RestaurantList from "./components/RestaurantList";
 import HeaderBar from "./components/HeaderBar";
 import CreateEvent from "./components/CreateEvent";
 import Popup from "reactjs-popup";
+import PopupWindow from "./components/PopupWindow";
 
 const db = firebase.database().ref();
 
 const App = () => {
   const [schedule, setSchedule] = useState({ title: '', events: [] });
   const [currPage, setCurrPage] = useState("events");
-  const [show, setShow] = useState(false);
-  const openModal = () => setShow(true);
-  const closeModal = () => setShow(false);
 
   useEffect(() => {
     const handleData = snap => {
@@ -36,12 +34,11 @@ const App = () => {
       return (
       <Container>
         <HeaderBar title={ schedule.title } />
-        <Popup trigger={<Button> Create Event </Button>} position="right center">
-          <CreateEvent>Popup content here !!</CreateEvent>
-        </Popup>
+            <PopupWindow/>
         <RestaurantList events={ schedule.events } />
       </Container>
-      );
+
+    );
     }
     else if (currPage === "home"){
       return (
