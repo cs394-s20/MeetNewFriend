@@ -30,9 +30,6 @@ const RestaurantList = ({ events }) => {
     };
 
 
-    if (matchedRestaurants) { console.log("there are restaurants available") } else { console.log("no restaurant available") }
-    console.log(events);
-
     return (
         <React.Fragment>
             <Preference state={{ cuisine, setCuisine,maxsize,setMaxSize }} />

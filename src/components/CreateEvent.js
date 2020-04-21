@@ -12,6 +12,8 @@ const CreateEvent = props => {
 
     const onDrop = picture => {
         setPictures([...pictures, picture]);
+        console.log("pictures");
+        console.log(pictures)
     };
 
     return (

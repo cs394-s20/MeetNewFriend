@@ -58,12 +58,9 @@ const Restaurant = ({ event }) => {
                 setImage(downloadURL);
             })
             .catch(() => {
-                console.log("error");
+                // console.log("error");
             });
     }, [image, setImage]);
-
-    console.log("inside function");
-    console.log(image);
 
     const handleJoin = () => {
         setJoined(!joined);
@@ -97,7 +94,7 @@ const Restaurant = ({ event }) => {
                         {/* make p tag not be at the right */}
                         <Label>Group Size: </Label>
                         <p onClick={()=> setShow(!show)}> {event["group-size"]} people</p>
-                        
+
                         {/* uncoment code when databse has fields
                             make list of people look nicer
                         */}
@@ -106,7 +103,7 @@ const Restaurant = ({ event }) => {
                                 {group}
                             </ul>
                         </Field> : null}
-                        
+
                     </Field>
                     <Field>
                         <Label> Time: </Label>
