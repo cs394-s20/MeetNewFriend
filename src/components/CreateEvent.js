@@ -3,9 +3,16 @@ import { Button, Container, Field, Control, Label, Select } from "rbx";
 import { useState } from 'react';
 import Restaurant from "./Restaurant";
 import cuisine from '../shared/data';
+import ImageUploader from 'react-images-upload';
 
 
-const CreateEvent = () => {
+const CreateEvent = props => {
+
+    const [pictures, setPictures] = useState([]);
+
+    const onDrop = picture => {
+        setPictures([...pictures, picture]);
+    };
 
     return (
 
@@ -82,6 +89,16 @@ const CreateEvent = () => {
                         <Field.Label> <Label> Description </Label> <textarea type="text" name="name" /></Field.Label>
                     </Field>
                 </li>
+
+                <ImageUploader
+                    {...props}
+                    withIcon={true}
+                    onChange={onDrop}
+                    imgExtension={[".jpg", ".gif", ".png", ".gif"]}
+                    maxFileSize={5242880}
+                />
+
+
             </ul>
 
 

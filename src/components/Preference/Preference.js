@@ -1,4 +1,4 @@
-import {Button,InputNumber, Dropdown} from "rbx";
+import {Button, InputNumber, Dropdown, Select, Control} from "rbx";
 import TimePicker from 'react-time-picker';
 import NumericInput from 'react-numeric-input';
 import React, {useState} from "react";
@@ -14,7 +14,6 @@ const Preference = ({ state }) => {
     return (
         <div className="filter">
             Preference:
-
             <Dropdown>
                 <Dropdown.Trigger> <Button color="info"> {state.cuisine} &#9660; </Button> </Dropdown.Trigger>
                 <Dropdown.Menu>

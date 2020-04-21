@@ -8,11 +8,11 @@ import { Button,Navbar, Container, Title } from 'rbx';
 import React, { useState, useEffect } from 'react';
 import RestaurantList from "./components/RestaurantList";
 import HeaderBar from "./components/HeaderBar";
-
-import Login from './components/Login';
+import Login from './components/Login/Login';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import 'firebase/auth';
+import PopupWindow from "./components/PopupWindow";
 
 
 const db = firebase.database().ref();
@@ -56,12 +56,15 @@ const App = () => {
 
   return (!initialRender && (
     <Router>
-
-        <HeaderBar title={ schedule.title } user={user}/> 
-      
+        <HeaderBar title={ schedule.title } user={user}/>
         <Switch>
           <Route exact path="/" component={Login} />
-          <Route exact path="/restaurant" component={()=> <RestaurantList events={ schedule.events }/>} />
+          <Route exact path="/restaurant" component={() =>
+              <React.Fragment>
+                <PopupWindow/>
+                <RestaurantList events={schedule.events}/>
+              </React.Fragment>
+          }/>
         </Switch>
       </Router>
     ));
