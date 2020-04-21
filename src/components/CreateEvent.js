@@ -95,10 +95,17 @@ const CreateEvent = props => {
                 <ImageUploader
                     {...props}
                     withIcon={true}
+                    withPreview={true}
                     onChange={onDrop}
                     imgExtension={[".jpg", ".gif", ".png", ".gif"]}
                     maxFileSize={5242880}
                 />
+
+                {
+                    pictures.map( picture =>
+                        <div> {picture.name} </div>
+                    )
+                }
 
 
             </ul>
