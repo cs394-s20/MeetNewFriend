@@ -2,6 +2,8 @@ import { Button, Card, Field, Label } from "rbx";
 import React, { useState, useEffect } from 'react';
 import firebase from '../../../src/shared/firebase.js'
 import "firebase/storage";
+import GuestListPopup from '../GuestListPopup';
+import ViewList from '../ViewList';
 
 const storage = firebase.storage().ref();
 const ref = storage.child("img").child("buffalo.jpg");
@@ -71,7 +73,10 @@ const Restaurant = ({ event }) => {
 
     const timeInfo = matchMeal(event["time"]);
 
-    const group = event["people"].map((person) => <li key={person}>{person}</li>);
+    const props = {
+        groupSize: event["group-size"],
+        group: event["people"]
+    }
 
     return (
         <li>
@@ -96,16 +101,7 @@ const Restaurant = ({ event }) => {
                     <Field>
                         {/* make p tag not be at the right */}
                         <Label>Group Size: </Label>
-                        <p onClick={()=> setShow(!show)}> {event["group-size"]} people</p>
-                        
-                        {/* uncoment code when databse has fields
-                            make list of people look nicer
-                        */}
-                         { show ? <Field>
-                            <ul>
-                                {group}
-                            </ul>
-                        </Field> : null}
+                        <GuestListPopup {...props} current={event["group-size"]} />
                         
                     </Field>
                     <Field>

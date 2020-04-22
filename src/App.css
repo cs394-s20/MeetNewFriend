@@ -143,6 +143,12 @@
   float: initial;
 }
 
+.viewList {
+  border: none;
+  background-color: transparent;
+  position: absolute;
+}
+
 .is-horizontal .field-label {
   display: flex;
 }
@@ -166,6 +172,12 @@
   margin-top: 3%;
 }
 
+
+
+.popup_guest{
+  text-align: center;
+
+}
 
 @keyframes App-logo-spin {
   from {
