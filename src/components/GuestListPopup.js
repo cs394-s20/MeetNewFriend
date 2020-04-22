@@ -11,7 +11,7 @@ var contentStyle = {
 };
 
 
-const GuestListPopup = (props) => {
+const GuestListPopup = props => {
     const current = props["groupSize"]
     const group = props["group"]
     return (

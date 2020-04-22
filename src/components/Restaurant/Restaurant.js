@@ -1,15 +1,16 @@
-import { Button, Card, Field, Label } from "rbx";
+import { ButtonGroup, Button, Card, Field, Label } from "rbx";
 import React, { useState, useEffect } from 'react';
 import firebase from '../../../src/shared/firebase.js'
 import "firebase/storage";
 import GuestListPopup from '../GuestListPopup';
+import JoinButton from "../JoinButton";
 import ViewList from '../ViewList';
 
 const storage = firebase.storage().ref();
 const ref = storage.child("img").child("buffalo.jpg");
 
 
-const Restaurant = ({ event }) => {
+const Restaurant = ({ name,event }) => {
     const [image, setImage] = useState("");
     const [joined, setJoined] = useState(false);
     const meals = ['Breakfast', 'Lunch', 'Dinner'];
@@ -64,8 +65,6 @@ const Restaurant = ({ event }) => {
             });
     }, [image, setImage]);
 
-    console.log("inside function");
-    console.log(image);
 
     const handleJoin = () => {
         setJoined(!joined);
@@ -76,6 +75,13 @@ const Restaurant = ({ event }) => {
     const props = {
         groupSize: event["group-size"],
         group: event["people"]
+    }
+
+    const propsForJoin = {
+        id:event["id"],
+        groupSize: event["group-size"],
+        group: event["people"],
+        name:name
     }
 
     return (
@@ -118,6 +124,14 @@ const Restaurant = ({ event }) => {
                     <Field>
                         {event['description']}
                     </Field>
+                    <Field>
+                        <Button.Group>
+                            <Button value = {event['id']} onClick={() => removeEvent(event.id) } as="a">Remove</Button>
+                            <JoinButton {...propsForJoin} />
+                        </Button.Group>
+                        
+                    </Field>
+                    
                 </Card.Content>
 
             </Card>
@@ -125,6 +139,11 @@ const Restaurant = ({ event }) => {
         </li>
     );
 
+};
+
+const removeEvent =  id => {
+    const idRef = firebase.database().ref('events/' + id);
+    idRef.remove();    
 };
 
 export default Restaurant;

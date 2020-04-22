@@ -172,6 +172,12 @@
   margin-top: 3%;
 }
 
+.auth-control button {
+  float: right;
+  right: 5%;
+  bottom: 10%;
+  position: absolute;
+}
 
 
 .popup_guest{
@@ -181,6 +187,7 @@
 
 .viewList {
   display: contents !important;
+  font-weight: 100;
 }
 
 @keyframes App-logo-spin {
