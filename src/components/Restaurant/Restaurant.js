@@ -12,14 +12,14 @@ const ref = storage.child("img").child("buffalo.jpg");
 const Restaurant = ({ event }) => {
     const [image, setImage] = useState("");
     const [joined, setJoined] = useState(false);
-    const meals = ['Breakfast','Lunch','Dinner'];
+    const meals = ['Breakfast', 'Lunch', 'Dinner'];
     const [show, setShow] = useState(false);
 
     const matchMeal = duration => {
 
         let meal = null;
 
-        let times =  duration.split("-");
+        let times = duration.split("-");
         let startTime = times[0];
         let endTime = times[1];
 
@@ -28,25 +28,25 @@ const Restaurant = ({ event }) => {
         let startTimeMinute = parseInt(startTime.split(":")[1]);
         let endTimeMinute = parseInt(endTime.split(":")[1]);
 
-        if (startTimeHour<12){
+        if (startTimeHour < 12) {
             meal = meals[0];
         }
 
-        else if (startTimeHour<=18){
+        else if (startTimeHour <= 18) {
             meal = meals[1];
         }
-        else{
+        else {
             meal = meals[2];
         }
 
 
-        let durationHour = (endTimeHour-startTimeHour).toString();
-        let durationMinute = (endTimeMinute-startTimeMinute).toString();
-        let durationFormat = (durationHour==="0") ? (durationMinute+"min") :
-          ((durationMinute==="0" ? (durationHour+"hr") : durationHour+"hr "+durationMinute+"min" ))
+        let durationHour = (endTimeHour - startTimeHour).toString();
+        let durationMinute = (endTimeMinute - startTimeMinute).toString();
+        let durationFormat = (durationHour === "0") ? (durationMinute + "min") :
+            ((durationMinute === "0" ? (durationHour + "hr") : durationHour + "hr " + durationMinute + "min"))
 
         //const time = duration.parse('-');
-        return [meal,startTime,durationFormat];
+        return [meal, startTime, durationFormat];
     };
 
 
@@ -93,16 +93,18 @@ const Restaurant = ({ event }) => {
 
                     <Field>
                         {/* <p> */}
-                            <Label> Date: </Label>
-                            {event["date"]}
+                        <Label> Date: </Label>
+                        {event["date"]}
                         {/* </p> */}
 
                     </Field>
                     <Field>
                         {/* make p tag not be at the right */}
-                        <Label>Group Size: </Label>
+                        <Label>Group Size:
                         <GuestListPopup {...props} current={event["group-size"]} />
-                        
+                        </Label>
+
+
                     </Field>
                     <Field>
                         <Label> Time: </Label>
@@ -119,7 +121,7 @@ const Restaurant = ({ event }) => {
                 </Card.Content>
 
             </Card>
-            <br/>
+            <br />
         </li>
     );
 
