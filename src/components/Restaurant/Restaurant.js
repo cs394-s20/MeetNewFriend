@@ -1,23 +1,26 @@
-import { Button, Card, Field, Label } from "rbx";
+import { ButtonGroup, Button, Card, Field, Label } from "rbx";
 import React, { useState, useEffect } from 'react';
 import firebase from '../../../src/shared/firebase.js'
 import "firebase/storage";
+import GuestListPopup from '../GuestListPopup';
+import JoinButton from "../JoinButton";
+import ViewList from '../ViewList';
 
 const storage = firebase.storage().ref();
 const ref = storage.child("img").child("buffalo.jpg");
 
 
-const Restaurant = ({ event }) => {
+const Restaurant = ({ name,event }) => {
     const [image, setImage] = useState("");
     const [joined, setJoined] = useState(false);
-    const meals = ['Breakfast','Lunch','Dinner'];
+    const meals = ['Breakfast', 'Lunch', 'Dinner'];
     const [show, setShow] = useState(false);
 
     const matchMeal = duration => {
 
         let meal = null;
 
-        let times =  duration.split("-");
+        let times = duration.split("-");
         let startTime = times[0];
         let endTime = times[1];
 
@@ -26,25 +29,25 @@ const Restaurant = ({ event }) => {
         let startTimeMinute = parseInt(startTime.split(":")[1]);
         let endTimeMinute = parseInt(endTime.split(":")[1]);
 
-        if (startTimeHour<12){
+        if (startTimeHour < 12) {
             meal = meals[0];
         }
 
-        else if (startTimeHour<=18){
+        else if (startTimeHour <= 18) {
             meal = meals[1];
         }
-        else{
+        else {
             meal = meals[2];
         }
 
 
-        let durationHour = (endTimeHour-startTimeHour).toString();
-        let durationMinute = (endTimeMinute-startTimeMinute).toString();
-        let durationFormat = (durationHour==="0") ? (durationMinute+"min") :
-          ((durationMinute==="0" ? (durationHour+"hr") : durationHour+"hr "+durationMinute+"min" ))
+        let durationHour = (endTimeHour - startTimeHour).toString();
+        let durationMinute = (endTimeMinute - startTimeMinute).toString();
+        let durationFormat = (durationHour === "0") ? (durationMinute + "min") :
+            ((durationMinute === "0" ? (durationHour + "hr") : durationHour + "hr " + durationMinute + "min"))
 
         //const time = duration.parse('-');
-        return [meal,startTime,durationFormat];
+        return [meal, startTime, durationFormat];
     };
 
 
@@ -64,11 +67,25 @@ const Restaurant = ({ event }) => {
 
     const handleJoin = () => {
         setJoined(!joined);
-    }
+    };
 
     const timeInfo = matchMeal(event["time"]);
 
-    const group = event["people"].map((person) => <li key={person}>{person}</li>);
+    const props = {
+        groupSize: event["group-size"],
+        group: event["people"]
+    };
+
+    const propsForJoin = {
+        id:event["id"],
+        groupSize: event["group-size"],
+        group: event["people"],
+        name:name
+    };
+
+    const NotHost = () =>{
+
+    };
 
     return (
         <li>
@@ -85,24 +102,17 @@ const Restaurant = ({ event }) => {
 
                     <Field>
                         {/* <p> */}
-                            <Label> Date: </Label>
-                            {event["date"]}
+                        <Label> Date: </Label>
+                        {event["date"]}
                         {/* </p> */}
 
                     </Field>
                     <Field>
                         {/* make p tag not be at the right */}
-                        <Label>Group Size: </Label>
-                        <p onClick={()=> setShow(!show)}> {event["group-size"]} people</p>
 
-                        {/* uncoment code when databse has fields
-                            make list of people look nicer
-                        */}
-                         { show ? <Field>
-                            <ul>
-                                {group}
-                            </ul>
-                        </Field> : null}
+                        <Label>Group Size:
+                        <GuestListPopup {...props} current={event["group-size"]} />
+                        </Label>
 
                     </Field>
                     <Field>
@@ -117,13 +127,26 @@ const Restaurant = ({ event }) => {
                     <Field>
                         {event['description']}
                     </Field>
+                    <Field>
+                        <Button.Group>
+                            <Button value = {event['id']} onClick={() => removeEvent(event.id) } as="a">Remove</Button>
+                            <JoinButton {...propsForJoin} />
+                        </Button.Group>
+
+                    </Field>
+
                 </Card.Content>
 
             </Card>
-            <br/>
+            <br />
         </li>
     );
 
+};
+
+const removeEvent =  id => {
+    const idRef = firebase.database().ref('events/' + id);
+    idRef.remove();
 };
 
 export default Restaurant;

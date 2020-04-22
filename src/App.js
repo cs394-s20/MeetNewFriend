@@ -61,8 +61,8 @@ const App = () => {
           <Route exact path="/" component={Login} />
           <Route exact path="/restaurant" component={() =>
               <React.Fragment>
-                <PopupWindow/>
-                <RestaurantList events={schedule.events}/>
+                {/*<PopupWindow/>*/}
+                <RestaurantList name={user ? user.displayName : null} events={schedule.events}/>
               </React.Fragment>
           }/>
         </Switch>

@@ -5,7 +5,7 @@ import Preference from "./Preference/Preference";
 
 
 
-const RestaurantList = ({ events }) => {
+const RestaurantList = ({ name, events }) => {
     const [cuisine, setCuisine] = useState('Pick Cuisine');
     const [maxsize,setMaxSize] = useState('10');
 
@@ -41,7 +41,7 @@ const RestaurantList = ({ events }) => {
                         <div class="col-md-6 restaurant-info" alt="Max-width 100%">
                             <ul class='restaurant'>
                                 {matchedRestaurants(events).map(event =>
-                                    <Restaurant key={event.id} event={event} />)}
+                                    <Restaurant name={(name===null) ? null : name} key={event.id} event={event} />)}
                             </ul>
                         </div>
                     </center>
