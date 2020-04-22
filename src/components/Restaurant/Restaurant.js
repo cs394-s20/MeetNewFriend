@@ -84,6 +84,10 @@ const Restaurant = ({ name,event }) => {
         name:name
     }
 
+    const NotHost = () =>{
+
+    }
+
     return (
         <li>
             <Card>

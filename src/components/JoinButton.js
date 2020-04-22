@@ -125,7 +125,7 @@ const JoinButton = (props) => {
 
 
     return (
-        <Button onDoubleClick={() => Clicking()} disabled={username===null || (MaxReached()&&value==="Join")  }>
+        <Button onClick={() => Clicking()} disabled={username===null || (MaxReached()&&value==="Join")  }>
             {value}
         </Button>       
     );
