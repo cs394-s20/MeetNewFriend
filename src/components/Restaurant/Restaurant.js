@@ -1,4 +1,4 @@
-import { Button, Card, Field, Label } from "rbx";
+import { ButtonGroup, Button, Card, Field, Label } from "rbx";
 import React, { useState, useEffect } from 'react';
 import firebase from '../../../src/shared/firebase.js'
 import "firebase/storage";
@@ -120,13 +120,18 @@ const Restaurant = ({ name,event }) => {
                         <Label> for </Label>
                         {timeInfo[2]}
                     </Field>
-                    <Field>
-                        <JoinButton {...propsForJoin} />
-                    </Field>
 
                     <Field>
                         {event['description']}
                     </Field>
+                    <Field>
+                        <Button.Group>
+                            <Button value = {event['id']} onClick={() => removeEvent(event.id) } as="a">Remove</Button>
+                            <JoinButton {...propsForJoin} />
+                        </Button.Group>
+                        
+                    </Field>
+                    
                 </Card.Content>
 
             </Card>
@@ -134,6 +139,11 @@ const Restaurant = ({ name,event }) => {
         </li>
     );
 
+};
+
+const removeEvent =  id => {
+    const idRef = firebase.database().ref('events/' + id);
+    idRef.remove();    
 };
 
 export default Restaurant;
