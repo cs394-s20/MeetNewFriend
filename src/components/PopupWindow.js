@@ -12,7 +12,7 @@ var contentStyle = {
 const PopupWindow = () => {
     return (
         <Popup contentStyle={contentStyle} trigger={<Button> Create Event </Button>} position="bottom center" modal closeOnDocumentClick>
-            <CreateEvent>Popup content here !!</CreateEvent>
+            <CreateEvent> </CreateEvent>
         </Popup>
     );
 };

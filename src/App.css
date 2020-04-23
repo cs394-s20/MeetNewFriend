@@ -143,10 +143,9 @@
   float: initial;
 }
 
-.viewList {
-  border: none;
-  background-color: transparent;
-  position: absolute;
+.button.button.guest-button {
+  margin-left: 5%;
+  position: initial;
 }
 
 .is-horizontal .field-label {

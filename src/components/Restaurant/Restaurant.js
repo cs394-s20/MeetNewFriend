@@ -111,7 +111,11 @@ const Restaurant = ({ name,event }) => {
                         {/* make p tag not be at the right */}
 
                         <Label>Group Size:
-                        <GuestListPopup {...props} current={event["group-size"]} />
+                        <GuestListPopup {...props} current={event["group-size"]}>
+
+                            button is here
+
+                        </GuestListPopup>
                         </Label>
 
                     </Field>
