@@ -4,19 +4,14 @@ import Popup from "reactjs-popup";
 import React from "react";
 
 
-var contentStyle = {
-    width: "40%",
-    background: "orange",
-    text: "center",
-};
-
 
 const GuestListPopup = props => {
-    const current = props["groupSize"]
-    const group = props["group"]
+    const current = props["groupSize"];
+    const group = props["group"];
     return (
-        <Popup contentStyle={contentStyle} trigger={<Button class="viewList"> {current} </Button>} position="bottom center" modal closeOnDocumentClick>
-            <ViewList group={group}></ViewList>
+        <Popup trigger={<Button className="guest-button"> {current} </Button>} position="right bottom"
+               closeOnDocumentClick>
+            <ViewList group={group}> </ViewList>
         </Popup>
     );
 };

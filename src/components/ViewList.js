@@ -3,8 +3,7 @@ import { Button, Container, Field, Control, Label, Select } from "rbx";
 import Popup from "reactjs-popup";
 
 const ViewList = (group) => {
-    console.log(group["group"]);
-    
+
     return (
             <Container>
                 <ul className='popup_guest'>
@@ -13,7 +12,7 @@ const ViewList = (group) => {
                             <p>Guest List</p>
                         </Field>
                     </li>
-                
+
                     <li>
                         <Field horizontal={true}>
                             <ul>
