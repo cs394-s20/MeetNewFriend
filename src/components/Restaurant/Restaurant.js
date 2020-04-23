@@ -133,7 +133,7 @@ const Restaurant = ({ name,event }) => {
                     </Field>
                     <Field>
                         <Button.Group>
-                            <Button value = {event['id']} onClick={() => removeEvent(event.id) } as="a">Remove</Button>
+                            {/* <Button value = {event['id']} onClick={() => removeEvent(event.id) } as="a">Remove</Button> */}
                             <JoinButton {...propsForJoin} />
                         </Button.Group>
 
@@ -147,6 +147,7 @@ const Restaurant = ({ name,event }) => {
     );
 
 };
+
 
 const removeEvent =  id => {
     const idRef = firebase.database().ref('events/' + id);
