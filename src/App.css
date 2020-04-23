@@ -146,6 +146,8 @@
 .button.button.guest-button {
   margin-left: 5%;
   position: initial;
+  background-color: gold;
+  border-color: #282c34;
 }
 
 .is-horizontal .field-label {
@@ -165,6 +167,10 @@
 
 .popup_create li {
   margin-bottom: 1%;
+}
+
+.popup-content. {
+  background-color: darkseagreen;
 }
 
 .popup-content .container {
