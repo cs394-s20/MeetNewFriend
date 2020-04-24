@@ -20,7 +20,6 @@ const CreateEvent = props => {
     const [date, setDate] = useState();
     const [time, setTime] = useState();
 
-    const format = 'h:mm';
     const now = moment().hour(0).minute(0);
 
     const onDrop = picture => {
@@ -41,7 +40,8 @@ const CreateEvent = props => {
     // because input is no longer registered with its ref.
     React.useEffect(() => {
         register({ name: "date" }, { required: true });
-        register({ name: "time" }, { required: false });
+        register({ name: "time-start" }, { required: false });
+        register({ name: "time-end" }, { required: false });
     }, []);
 
     const party_size = []
@@ -106,7 +106,7 @@ const CreateEvent = props => {
 
                     <li>
                         <Field horizontal={true}>
-                            <Field.Label> <Label> Time</Label>
+                            <Field.Label> <Label> Time Start </Label>
                                 <Control expanded={true}>
                                     <TimePicker
                                         defaultValue={now}
@@ -114,7 +114,26 @@ const CreateEvent = props => {
                                         inputReadOnly
                                         onChange={val => {
                                             setTime(val);
-                                            setValue("time", val);// Here we are setting the value for the registered input.
+                                            setValue("time-start", val);// Here we are setting the value for the registered input.
+                                        }}
+                                    />
+                                </Control>
+                            </Field.Label>
+
+                        </Field>
+                    </li>
+
+                    <li>
+                        <Field horizontal={true}>
+                            <Field.Label> <Label> Time End </Label>
+                                <Control expanded={true}>
+                                    <TimePicker
+                                        defaultValue={now}
+                                        showSecond={false}
+                                        inputReadOnly
+                                        onChange={val => {
+                                            setTime(val);
+                                            setValue("time-end", val);// Here we are setting the value for the registered input.
                                         }}
                                     />
                                 </Control>
