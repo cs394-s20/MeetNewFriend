@@ -4,11 +4,24 @@ import { useState } from 'react';
 import Restaurant from "./Restaurant";
 import cuisine from '../shared/data';
 import ImageUploader from 'react-images-upload';
+import { useForm } from 'react-hook-form';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import TimePicker from 'rc-time-picker';
+import 'rc-time-picker/assets/index.css';
+import moment from 'moment';
+import firebase from '../shared/firebase'
+
+
 
 
 const CreateEvent = props => {
 
     const [pictures, setPictures] = useState([]);
+    const [date, setDate] = useState();
+    const [time, setTime] = useState();
+
+    const now = moment().hour(0).minute(0);
 
     const onDrop = picture => {
         setPictures([...pictures, picture]);
@@ -16,81 +29,170 @@ const CreateEvent = props => {
         console.log(pictures)
     };
 
+    const { register, handleSubmit, errors, setValue} = useForm(); // initialise the hook
+    const onSubmit = data => {
+        const itemsRef = firebase.database().ref('events');
+        const item = {
+            "cuisine" : "Italian",
+            "date" : "2020-04-18",
+            "group-size" : "7/10",
+            "time" : "10:00-10:50",
+            "id" : "20",
+            "name" : "NEWWWWWWWW",
+            "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fbuffalo.jpg?alt=media&token=ed14f7b4-53c9-4ff9-a9db-7787bced5231",
+            "description": "Join us for some cheese and wine night (if you are of age). Dress code is formal so break out the suits and dresses.",
+            "people": ["Mary"]
+        };
+        itemsRef.push(item);
+        console.log(data);
+    };
+
+    // You can also register inputs manually, which is useful when working with custom components
+    // and Ref is not accessible. This is actually the case when you are working with React Native or
+    // custom component like react-select.
+    // By using a custom register call, you will need to update the input value with setValue,
+    // because input is no longer registered with its ref.
+    React.useEffect(() => {
+        register({ name: "date" }, { required: true });
+        register({ name: "time-start" }, { required: false });
+        register({ name: "time-end" }, { required: false });
+    }, []);
+
+    const party_size = []
+
+    for (var i = 1; i <= 30; i++) {
+        party_size.push(
+            <Select.Option key={i}> {i} </Select.Option>
+            // <li key={index}>{value}</li>
+    )}
+
+
     return (
 
         <Container>
             <ul className='popup_create'>
-                <li>
-                    <Field horizontal={true}>
-                        <Field.Label> <Label> Restaurant Name </Label>
-                            <textarea type="text" name="name" />
-                        </Field.Label>
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <li >
+                        <Field horizontal={true}>
+                            <Field.Label> <Label> Restaurant Name </Label>
+                                <textarea type="text" name="restaurant-name" ref={register}/>
+                            </Field.Label>
 
-                    </Field>
-                </li>
+                        </Field>
+                    </li>
+
+                    <li>
+                        <Field horizontal={true}>
+                            <Field.Label> <Label> Cuisine </Label>
+                                <Control expanded={true}>
+                                    <Select.Container fullwidth={true}>
+                                        <Select name="cuisine" ref={register}>
+                                            {Object.values(cuisine).map(value =>
+                                                <Select.Option key={value}> {value} </Select.Option>)
+                                            }
+                                        </Select>
+                                    </Select.Container>
+                                </Control>
+                            </Field.Label>
+                        </Field>
+                    </li>
 
 
-                <li>
-                    <Field horizontal={true}>
-                        <Field.Label> <Label> Cuisine </Label>
-                            <Control expanded={true}>
-                                <Select.Container fullwidth={true}>
-                                    <Select>
-                                        {Object.values(cuisine).map(value =>
-                                            <Select.Option> {value} </Select.Option>)
-                                        }
-                                    </Select>
-                                </Select.Container>
-                            </Control>
-                        </Field.Label>
+                    <li>
+                        <Field horizontal={true}>
+                            <Field.Label> <Label> Date </Label>
+                                <Control expanded={true}>
+                                    <DatePicker
+                                        isClearable
+                                        selected={date}
+                                        onChange={val => {
+                                            setDate(val);
+                                            setValue("date", val);// Here we are setting the value for the registered input.
+                                        }}
+                                    />
+                                </Control>
+                            </Field.Label>
+
+                        </Field>
+                    </li>
+
+                    <li>
+                        <Field horizontal={true}>
+                            <Field.Label> <Label> Time Start </Label>
+                                <Control expanded={true}>
+                                    <TimePicker
+                                        defaultValue={now}
+                                        showSecond={false}
+                                        inputReadOnly
+                                        onChange={val => {
+                                            setTime(val);
+                                            setValue("time-start", val);// Here we are setting the value for the registered input.
+                                        }}
+                                    />
+                                </Control>
+                            </Field.Label>
+
+                        </Field>
+                    </li>
+
+                    <li>
+                        <Field horizontal={true}>
+                            <Field.Label> <Label> Time End </Label>
+                                <Control expanded={true}>
+                                    <TimePicker
+                                        defaultValue={now}
+                                        showSecond={false}
+                                        inputReadOnly
+                                        onChange={val => {
+                                            setTime(val);
+                                            setValue("time-end", val);// Here we are setting the value for the registered input.
+                                        }}
+                                    />
+                                </Control>
+                            </Field.Label>
+
+                        </Field>
+                    </li>
 
 
+                    <li>
+                        <Field horizontal={true}>
+                            <Field.Label> <Label> Party Size </Label>
+                                <Control expanded={true}>
 
-                    </Field>
-                </li>
+                                    <Select.Container fullwidth={true}>
+                                        <Select name="party-size" ref={register}>
+                                            {party_size}
+                                            {/*<Select.Option> Small </Select.Option>*/}
+                                            {/*<Select.Option> Medium </Select.Option>*/}
+                                            {/*<Select.Option> Large </Select.Option>*/}
+                                        </Select>
+                                    </Select.Container>
 
-                <li>
-                    <Field horizontal={true}>
-                        <Field.Label> <Label> Time </Label>
-                            <Control expanded={true}>
+                                </Control></Field.Label>
 
-                                <Select.Container fullwidth={true}>
-                                    <Select>
-                                        <Select.Option> Breakfast </Select.Option>
-                                        <Select.Option> Lunch </Select.Option>
-                                        <Select.Option> Dinner </Select.Option>
-                                    </Select>
-                                </Select.Container>
+                        </Field>
+                    </li>
 
-                            </Control>
-                        </Field.Label>
+                    <li>
+                        <Field horizontal={true}>
+                            <Field.Label> <Label> Description </Label>
+                                <textarea type="text" name="description" ref={register} />
+                            </Field.Label>
+                        </Field>
+                    </li>
 
-                    </Field>
-                </li>
+                    {/*<input name="firstname" ref={register} /> /!* register an input *!/*/}
 
-                <li>
-                    <Field horizontal={true}>
-                        <Field.Label> <Label> Party Size </Label>
-                            <Control expanded={true}>
+                    {/*<input name="lastname" ref={register({ required: true })} />*/}
+                    {/*{errors.lastname && 'Last name is required.'}*/}
 
-                                <Select.Container fullwidth={true}>
-                                    <Select>
-                                        <Select.Option> Small </Select.Option>
-                                        <Select.Option> Medium </Select.Option>
-                                        <Select.Option> Large </Select.Option>
-                                    </Select>
-                                </Select.Container>
+                    {/*<input name="age" ref={register({ pattern: /\d+/ })} />*/}
+                    {/*{errors.age && 'Please enter number for age.'}*/}
 
-                            </Control></Field.Label>
+                    <Button type="submit" color="info"> submit </Button>
+                </form>
 
-                    </Field>
-                </li>
-
-                <li>
-                    <Field horizontal={true}>
-                        <Field.Label> <Label> Description </Label> <textarea type="text" name="name" /></Field.Label>
-                    </Field>
-                </li>
 
                 <ImageUploader
                     {...props}
