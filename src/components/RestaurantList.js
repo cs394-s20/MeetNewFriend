@@ -38,8 +38,8 @@ const RestaurantList = ({ name, events }) => {
                     {availableWords(matchedRestaurants(events))}
                 {/* <div class="row"> */}
                     <center>
-                        <div class="col-md-6 restaurant-info" alt="Max-width 100%">
-                            <ul class='restaurant'>
+                        <div className="col-md-6 restaurant-info" alt="Max-width 100%">
+                            <ul>
                                 {matchedRestaurants(events).map(event =>
                                     <Restaurant name={(name===null) ? null : name} key={event.id} event={event} />)}
                             </ul>
