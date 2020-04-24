@@ -17,7 +17,7 @@ const RestaurantList = ({ name, events }) => {
         }
         else {
             // convert json to array
-            const arr = []
+            const arr = [];
             Object.values(events).forEach(value => arr.push(value));
             return arr.filter(ANDMatch);
         }
@@ -45,12 +45,6 @@ const RestaurantList = ({ name, events }) => {
                     <center>
                         <div className="col-md-6 restaurant-info" alt="Max-width 100%">
                             <ul>
-                                {/*{*/}
-                                {/*    Object.keys(matchedRestaurants(events)).map((e, key) => {*/}
-                                {/*        <Restaurant name={(name===null) ? null : name} key={e.id} event={e} />*/}
-                                {/*    });*/}
-                                {/*}*/}
-
                                 {
                                     Object.values(matchedRestaurants(events)).map((e) => {
                                         return (
@@ -58,10 +52,6 @@ const RestaurantList = ({ name, events }) => {
                                         )
                                     })
                                 }
-
-
-                                {/*{matchedRestaurants(events).map(event =>*/}
-                                {/*    <Restaurant name={(name===null) ? null : name} key={event.id} event={event} />)}*/}
                             </ul>
                         </div>
                     </center>
