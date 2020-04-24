@@ -16,7 +16,10 @@ const RestaurantList = ({ name, events }) => {
             return events;
         }
         else {
-            return events.filter(ANDMatch);
+            // convert json to array
+            const arr = []
+            Object.values(events).forEach(value => arr.push(value));
+            return arr.filter(ANDMatch);
         }
     };
 
@@ -29,6 +32,8 @@ const RestaurantList = ({ name, events }) => {
         }
     };
 
+    console.log(matchedRestaurants(events));
+
 
     return (
         <React.Fragment>
@@ -40,8 +45,23 @@ const RestaurantList = ({ name, events }) => {
                     <center>
                         <div className="col-md-6 restaurant-info" alt="Max-width 100%">
                             <ul>
-                                {matchedRestaurants(events).map(event =>
-                                    <Restaurant name={(name===null) ? null : name} key={event.id} event={event} />)}
+                                {/*{*/}
+                                {/*    Object.keys(matchedRestaurants(events)).map((e, key) => {*/}
+                                {/*        <Restaurant name={(name===null) ? null : name} key={e.id} event={e} />*/}
+                                {/*    });*/}
+                                {/*}*/}
+
+                                {
+                                    Object.values(matchedRestaurants(events)).map((e) => {
+                                        return (
+                                            <Restaurant name={(name===null) ? null : name} key={e.id} event={e} />
+                                        )
+                                    })
+                                }
+
+
+                                {/*{matchedRestaurants(events).map(event =>*/}
+                                {/*    <Restaurant name={(name===null) ? null : name} key={event.id} event={event} />)}*/}
                             </ul>
                         </div>
                     </center>

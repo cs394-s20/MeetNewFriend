@@ -10,6 +10,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import TimePicker from 'rc-time-picker';
 import 'rc-time-picker/assets/index.css';
 import moment from 'moment';
+import firebase from '../shared/firebase'
 
 
 
@@ -30,6 +31,19 @@ const CreateEvent = props => {
 
     const { register, handleSubmit, errors, setValue} = useForm(); // initialise the hook
     const onSubmit = data => {
+        const itemsRef = firebase.database().ref('events');
+        const item = {
+            "cuisine" : "Italian",
+            "date" : "2020-04-18",
+            "group-size" : "7/10",
+            "time" : "10:00-10:50",
+            "id" : "20",
+            "name" : "NEWWWWWWWW",
+            "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fbuffalo.jpg?alt=media&token=ed14f7b4-53c9-4ff9-a9db-7787bced5231",
+            "description": "Join us for some cheese and wine night (if you are of age). Dress code is formal so break out the suits and dresses.",
+            "people": ["Mary"]
+        };
+        itemsRef.push(item);
         console.log(data);
     };
 
@@ -56,8 +70,6 @@ const CreateEvent = props => {
     return (
 
         <Container>
-
-
             <ul className='popup_create'>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <li >
