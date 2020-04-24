@@ -11,12 +11,11 @@ const GuestList = ({ event }) => {
     return (
         <li>
             <Card>
-                <Card.Content>  
+                <Card.Content>
                     <Field>
                         Gregg
                     </Field>
                 </Card.Content>
-
             </Card>
             <br/>
         </li>

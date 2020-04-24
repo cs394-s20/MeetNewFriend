@@ -61,28 +61,31 @@ const Restaurant = ({ name,event }) => {
                 setImage(downloadURL);
             })
             .catch(() => {
-                console.log("error");
+                // console.log("error");
             });
     }, [image, setImage]);
 
-
     const handleJoin = () => {
         setJoined(!joined);
-    }
+    };
 
     const timeInfo = matchMeal(event["time"]);
 
     const props = {
         groupSize: event["group-size"],
         group: event["people"]
-    }
+    };
 
     const propsForJoin = {
         id:event["id"],
         groupSize: event["group-size"],
         group: event["people"],
         name:name
-    }
+    };
+
+    const NotHost = () =>{
+
+    };
 
     return (
         <li>
@@ -106,10 +109,14 @@ const Restaurant = ({ name,event }) => {
                     </Field>
                     <Field>
                         {/* make p tag not be at the right */}
-                        <Label>Group Size:
-                        <GuestListPopup {...props} current={event["group-size"]} />
-                        </Label>
 
+                        <Label>Group Size:
+                        <GuestListPopup {...props} current={event["group-size"]}>
+
+                            button is here
+
+                        </GuestListPopup>
+                        </Label>
 
                     </Field>
                     <Field>
@@ -126,12 +133,12 @@ const Restaurant = ({ name,event }) => {
                     </Field>
                     <Field>
                         <Button.Group>
-                            <Button value = {event['id']} onClick={() => removeEvent(event.id) } as="a">Remove</Button>
+                            {/* <Button value = {event['id']} onClick={() => removeEvent(event.id) } as="a">Remove</Button> */}
                             <JoinButton {...propsForJoin} />
                         </Button.Group>
-                        
+
                     </Field>
-                    
+
                 </Card.Content>
 
             </Card>
@@ -141,9 +148,10 @@ const Restaurant = ({ name,event }) => {
 
 };
 
+
 const removeEvent =  id => {
     const idRef = firebase.database().ref('events/' + id);
-    idRef.remove();    
+    idRef.remove();
 };
 
 export default Restaurant;

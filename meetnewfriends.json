@@ -62,8 +62,13 @@
     "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fbuffalo.jpg?alt=media&token=ed14f7b4-53c9-4ff9-a9db-7787bced5231",
     "description": "We’re going out for Wing Night Wednesday. All you can eat 50 cent wings with the post-grad students. Who says no to 50 cent wings? Not you!",
     "people":["Tiana Taylor",
+<<<<<<< HEAD
      "Julie Silverman",
      "Emma DiDomenico"]
+=======
+      "Julie Silverman",
+      "Emma DiDomenico"]
+>>>>>>> fb37fee2ee6d0736a4d0c4129010d79e45c45fbe
   }, {
     "cuisine" : "Italian",
     "date" : "2020-04-29",

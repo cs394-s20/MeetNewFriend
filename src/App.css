@@ -143,10 +143,11 @@
   float: initial;
 }
 
-.viewList {
-  border: none;
-  background-color: transparent;
-  position: absolute;
+.button.button.guest-button {
+  margin-left: 5%;
+  position: initial;
+  background-color: gold;
+  border-color: #282c34;
 }
 
 .is-horizontal .field-label {
@@ -166,6 +167,10 @@
 
 .popup_create li {
   margin-bottom: 1%;
+}
+
+.popup-content. {
+  background-color: darkseagreen;
 }
 
 .popup-content .container {
@@ -188,6 +193,15 @@
 .viewList {
   display: contents !important;
   font-weight: 100;
+}
+
+.popup-overlay .popup-content .container {
+  background-color: pink;
+  margin: 0px;
+}
+
+.popup-overlay .popup-content  {
+  background-color: pink !important;
 }
 
 @keyframes App-logo-spin {
