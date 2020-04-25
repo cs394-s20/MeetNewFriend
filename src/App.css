@@ -212,3 +212,7 @@
     transform: rotate(360deg);
   }
 }
+
+.tag{
+  border: 1px solid green;
+}

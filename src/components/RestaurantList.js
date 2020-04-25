@@ -2,24 +2,35 @@ import { Button } from "rbx";
 import React, { useState } from 'react';
 import Restaurant from './Restaurant/Restaurant';
 import Preference from "./Preference/Preference";
+import TagFilter from "./TagFilter/TagFilter"
 
 
 
 const RestaurantList = ({ name, events }) => {
     const [cuisine, setCuisine] = useState('Pick Cuisine');
     const [maxsize,setMaxSize] = useState('10');
+    const [tag, setTag] = useState('Pick Tag');
 
     const ANDMatch = event => cuisine === event.cuisine;
+    const tagMatch = event => tag === event.tag;
 
     const matchedRestaurants = (events) => {
-        if (cuisine === 'Pick Cuisine' || cuisine === "All") {
+        if ((cuisine === 'Pick Cuisine' || cuisine === "All") && (tag === "Pick Tag")) {
             return events;
         }
         else {
             // convert json to array
             const arr = [];
             Object.values(events).forEach(value => arr.push(value));
-            return arr.filter(ANDMatch);
+            if (cuisine === 'Pick Cuisine' || cuisine === "All"){
+                return arr.filter(tagMatch);
+            }
+            else if (tag === "Pick Tag"){
+                return arr.filter(ANDMatch);
+            }
+            else{
+                return arr.filter(ANDMatch).filter(tagMatch);
+            }
         }
     };
 
@@ -38,6 +49,7 @@ const RestaurantList = ({ name, events }) => {
     return (
         <React.Fragment>
             <Preference state={{ cuisine, setCuisine,maxsize,setMaxSize }} />
+            <TagFilter state={{ tag, setTag }} />
 
                 <div className='restaurant-list'>
                     {availableWords(matchedRestaurants(events))}
