@@ -83,9 +83,6 @@ const Restaurant = ({ name,event }) => {
         name:name
     };
 
-    const NotHost = () =>{
-
-    };
 
     return (
         <li>
@@ -133,7 +130,7 @@ const Restaurant = ({ name,event }) => {
                     </Field>
                     <Field>
                         <Button.Group>
-                            {/* <Button value = {event['id']} onClick={() => removeEvent(event.id) } as="a">Remove</Button> */}
+                            { <Button value = {event['id']} onClick={() => removeEvent(event.id) } disabled={name!==event["host"]} as="a">Remove</Button> }
                             <JoinButton {...propsForJoin} />
                         </Button.Group>
 
