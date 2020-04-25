@@ -32,19 +32,34 @@ const CreateEvent = props => {
     const { register, handleSubmit, errors, setValue} = useForm(); // initialise the hook
     const onSubmit = data => {
         const itemsRef = firebase.database().ref('events');
+        var time_start = "00:00";
+        if (data["time-start"] != undefined) {
+            time_start = String(data["time-start"]["_d"]);
+            var arr = time_start.split(" ");
+            time_start = arr[4].substring(0, 5);
+        }
+        var time_end = "00:00";
+        if (data["time-end"] != undefined) {
+            time_end = String(data["time-end"]["_d"]);
+            var arr = time_end.split(" ");
+            time_end = arr[4].substring(0, 5);
+        }
+        var date = data["date"];
+        date = date.toISOString().substring(0, 10);
         const item = {
-            "cuisine" : "Italian",
-            "date" : "2020-04-18",
-            "group-size" : "7/10",
-            "time" : "10:00-10:50",
-            "id" : "20",
-            "name" : "NEWWWWWWWW",
+            "cuisine" : data["cuisine"],
+            "date" : date,
+            "group-size" : "1/" + data["party-size"],
+            "time" : time_start + "-" + time_end,
+            "id" : itemsRef.key,
+            "name" : data["restaurant-name"],
             "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fbuffalo.jpg?alt=media&token=ed14f7b4-53c9-4ff9-a9db-7787bced5231",
-            "description": "Join us for some cheese and wine night (if you are of age). Dress code is formal so break out the suits and dresses.",
+            "description": data["description"],
             "people": ["Mary"]
         };
-        itemsRef.push(item);
-        console.log(data);
+        console.log(date);
+        console.log(item);
+        // itemsRef.push(item);
     };
 
     // You can also register inputs manually, which is useful when working with custom components

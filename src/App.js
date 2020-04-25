@@ -44,7 +44,7 @@ const App = () => {
       setUser(user);
       setInitialRender(false);
       console.log(user);
-    })
+    });
 
     const handleData = snap => {
       if (snap.val()) setSchedule(snap.val());
