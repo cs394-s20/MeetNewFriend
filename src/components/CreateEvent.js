@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Restaurant from "./Restaurant";
 import cuisine from '../shared/data';
 import ImageUploader from 'react-images-upload';
-import { useForm } from 'react-hook-form';
+import { useForm , ErrorMessage} from 'react-hook-form';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import TimePicker from 'rc-time-picker';
@@ -59,11 +59,13 @@ const CreateEvent = (host, props) => {
             "description": data["description"],
             "people": [name]
         };
-        console.log(name);
-        console.log(host);
-        console.log(date);
-        console.log(item);
-        // itemsRef.push(item);
+        // console.log(name);
+        // console.log(host);
+        // console.log(date);
+        // console.log(item);
+        itemsRef.push(item);
+        alert("Event is successfully created!");
+        window.location.reload(false);
     };
 
     // You can also register inputs manually, which is useful when working with custom components
@@ -73,11 +75,11 @@ const CreateEvent = (host, props) => {
     // because input is no longer registered with its ref.
     React.useEffect(() => {
         register({ name: "date" }, { required: true });
-        register({ name: "time-start" }, { required: false });
-        register({ name: "time-end" }, { required: false });
+        register({ name: "time-start" }, { required: true });
+        register({ name: "time-end" }, { required: true });
     }, []);
 
-    const party_size = []
+    const party_size = [];
 
     for (var i = 1; i <= 30; i++) {
         party_size.push(
@@ -94,7 +96,8 @@ const CreateEvent = (host, props) => {
                     <li >
                         <Field horizontal={true}>
                             <Field.Label> <Label> Restaurant Name </Label>
-                                <textarea type="text" name="restaurant-name" ref={register}/>
+                                <textarea type="text" name="restaurant-name" ref={register({ required: true })}/>
+                                <ErrorMessage errors={errors} name="restaurant-name" message="This is required" />
                             </Field.Label>
 
                         </Field>
@@ -129,6 +132,7 @@ const CreateEvent = (host, props) => {
                                             setValue("date", val);// Here we are setting the value for the registered input.
                                         }}
                                     />
+                                    <ErrorMessage errors={errors} name="date" message="This is required" />
                                 </Control>
                             </Field.Label>
 
@@ -148,6 +152,7 @@ const CreateEvent = (host, props) => {
                                             setValue("time-start", val);// Here we are setting the value for the registered input.
                                         }}
                                     />
+                                    <ErrorMessage errors={errors} name="time-start" message="This is required" />
                                 </Control>
                             </Field.Label>
 
@@ -167,6 +172,7 @@ const CreateEvent = (host, props) => {
                                             setValue("time-end", val);// Here we are setting the value for the registered input.
                                         }}
                                     />
+                                    <ErrorMessage errors={errors} name="time-end" message="This is required" />
                                 </Control>
                             </Field.Label>
 
