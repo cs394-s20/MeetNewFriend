@@ -9,7 +9,8 @@
     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1",
     "name" : "Le Peep",
     "people" : [ "Zhen Huang","George Costanza", "Jerry Seinfeld", "Elaine Benis", "Cosmo Kramer", "Frank Costanza" ],
-    "time" : "11:00-11:50"
+    "time" : "11:00-11:50",
+    "tag": "School"
   }, {
     "cuisine" : "Italian",
     "date" : "2020-04-18",
@@ -20,7 +21,8 @@
     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fbuffalo.jpg?alt=media&token=ed14f7b4-53c9-4ff9-a9db-7787bced5231",
     "name" : "Terra & Vine",
     "people" : [ "Zhen Huang","Luke Choe", "Richard Huang", "Idrees Kamal", "Zubair Ahmed", "Emily Nee", "Sarah Roberts", "Jemille Hill" ],
-    "time" : "10:00-10:50"
+    "time" : "10:00-10:50",
+    "tag": "School"
   }, {
     "cuisine" : "Mexican",
     "date" : "2020-05-23",
@@ -31,7 +33,8 @@
     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Ftaco.jpg?alt=media&token=6a8489ed-ed72-4ddb-ab97-7d85ecf7fed3",
     "name" : "Taco Diablo",
     "people" : [ "Zhen Huang","Jon Snow", "Cersei Lannister", "Arya Stark" ],
-    "time" : "13:00-13:50"
+    "time" : "13:00-13:50",
+    "tag": "School"
   }, {
     "cuisine" : "Mexican",
     "date" : "2020-05-25",
@@ -41,7 +44,8 @@
     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fmexican.jpg?alt=media&token=d3ab63e8-cc56-4700-be85-f89e88f16c09",
     "name" : "That Little Mexican Cafe",
     "people" : [ "Zhen Huang","Yousuf Kadir", "Rohail Memon" ],
-    "time" : "12:30-13:50"
+    "time" : "12:30-13:50",
+    "tag": "School"
   }, {
     "cuisine" : "American",
     "date" : "2020-04-18",
@@ -52,7 +56,8 @@
     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fbuffalo.jpg?alt=media&token=ed14f7b4-53c9-4ff9-a9db-7787bced5231",
     "name" : "Buffalo Joe's",
     "people" : [ "Zhen Huang","Tiana Taylor", "Julie Silverman", "Emma DiDomenico" ],
-    "time" : "15:00-15:50"
+    "time" : "15:00-15:50",
+    "tag": "Sports"
   }, {
     "cuisine" : "Italian",
     "date" : "2020-04-29",
@@ -63,7 +68,8 @@
     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fgiordanos.jpg?alt=media&token=b4deb63a-38de-4d6c-a40b-26aa80f754b9",
     "name" : "Gigio's Pizzeria",
     "people" : ["Zhen Huang", "Lisa Leslie", "Justine Skye" ],
-    "time" : "15:30-16:50"
+    "time" : "15:30-16:50",
+    "tag": "Fun"
   }, {
     "cuisine" : "Mediterranean",
     "date" : "2020-04-27",
@@ -73,7 +79,8 @@
     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Folive.jpg?alt=media&token=3f9e9b3a-2aad-469a-af26-8d642b3fba31",
     "name" : "Olive Mountain Grill",
     "people" : [ "Zhen Huang","Yousuf Musa", "Ismail Patel" ],
-    "time" : "14:00-15:20"
+    "time" : "14:00-15:20",
+    "tag": "School"
   }, {
     "cuisine" : "Italian",
     "date" : "2020-04-27",
@@ -84,7 +91,8 @@
     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fbuffalo.jpg?alt=media&token=ed14f7b4-53c9-4ff9-a9db-7787bced5231",
     "name" : "Giardanos",
     "people" : [ "Zhen Huang","Chris Reisbeck" ],
-    "time" : "9:30-10:50"
+    "time" : "9:30-10:50",
+    "tag": "School"
   }, {
     "cuisine" : "American",
     "date" : "2020-06-01",
@@ -95,7 +103,8 @@
     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Ffarmhouse.jpg?alt=media&token=9c976ebb-bf27-4f4a-bf7d-76f721eb08ad",
     "name" : "Farmhouse Evanston",
     "people" : [ "Zhen Huang","Mustafa Drogba", "Chris Moltasanti", "Paulie Gualtarie", "Ralph Cifaretto", "Silvio Dante", "Lorraine Brachi" ],
-    "time" : "12:30-13:50"
+    "time" : "12:30-13:50",
+    "tag": "School"
   }, {
     "cuisine" : "Mediterranean",
     "date" : "2020-06-01",
@@ -106,7 +115,8 @@
     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Ffiveanddine.jpg?alt=media&token=b802bffb-c7c1-4fac-87fc-59fdbbf56879",
     "name" : "Five & Dine",
     "people" : [ "Zhen Huang","Courtney Cox", "Megan Wheeler", "Lisa Kudrow", "Jennifer Aniston" ],
-    "time" : "11:30-13:50"
+    "time" : "11:30-13:50",
+    "tag": "School"
   }, {
     "cuisine" : "French",
     "date" : "2020-04-21",
@@ -117,7 +127,8 @@
     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Ffrance.jpg?alt=media&token=66898aee-32f5-4535-9b93-51ecf43e5dd9",
     "name" : "Chez Benoit Bistro",
     "people" : [ "Zhen Huang","Zack Knight", "Lawrence Patrick" ],
-    "time" : "6:30-8:00"
+    "time" : "6:30-8:00",
+    "tag": "School"
   }, {
     "cuisine" : "British",
     "date" : "2020-04-13",
@@ -128,7 +139,8 @@
     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fenglish.jpg?alt=media&token=444d6ba9-c4c4-496b-8c68-9e72bfaefbb9",
     "name" : "The Irish Mill",
     "people" : [ "Zhen Huang","Aubrey Graham", "Jermaine Hus", "Michael Knight", "Sharon Duncan", "Shelley Sims", "Elizabeth Tan", "Davie Modie", "Sully Kano", "Polly Gray", "Ada Rundle", "Natasha O'Keefe", "Kate Phillips" ],
-    "time" : "21:00-23:00"
+    "time" : "21:00-23:00",
+    "tag": "School"
   }, {
     "cuisine" : "Greek",
     "date" : "2020-04-12",
@@ -139,7 +151,8 @@
     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fgreek.jpeg?alt=media&token=591b0309-0a63-4900-90c0-c6df78bdc847",
     "name" : "Plateia Mediterranean Kitchen Bar",
     "people" : [ "Zhen Huang","Ben Clafin", "Aiden Gillen", "Anna Gunn", "Andrew Schultz" ],
-    "time" : "11:00-12:30"
+    "time" : "11:00-12:30",
+    "tag": "School"
   }, {
     "cuisine" : "Greek",
     "date" : "2020-04-22",
@@ -150,7 +163,8 @@
     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fterra.jpg?alt=media&token=9e8917f2-ea7f-4bac-a8a2-150f4ccf6043",
     "name" : "Demetri's Greek Restaurant",
     "people" : [ "Zhen Huang","Laura Fraser", "Kristen Ritter", "Giancarlo Esposito", "Edwin Quiroz", "RJ Mitte", "Walter White" ],
-    "time" : "11:30-12:30"
+    "time" : "11:30-12:30",
+    "tag": "School"
   }, {
     "cuisine" : "Chinese",
     "date" : "2020-05-01",
@@ -161,7 +175,8 @@
     "imageURL" : "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fpeppercorn.png?alt=media&token=cb3571c4-1347-474d-8899-2073e3ae5b7f",
     "name" : "Peppercorns Kitchen",
     "people" : [ "Zhen Huang","Benjamin Cranston", "Bobby O'Rourke", "Dean Norris", "Elijah Pitre", "Jesse Tov" ],
-    "time" : "17:00-18:00"
+    "time" : "17:00-18:00",
+    "tag": "School"
   } ],
   "title" : "Events: Eating Together"
 }
