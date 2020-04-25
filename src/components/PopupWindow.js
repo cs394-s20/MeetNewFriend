@@ -4,10 +4,10 @@ import Popup from "reactjs-popup";
 import React from "react";
 
 
-const PopupWindow = () => {
+const PopupWindow = (host) => {
     return (
         <Popup trigger={<Button> Create Event </Button>} position="bottom center" modal closeOnDocumentClick>
-            <CreateEvent> </CreateEvent>
+            <CreateEvent name={host}> </CreateEvent>
         </Popup>
     );
 };
