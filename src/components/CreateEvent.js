@@ -15,7 +15,7 @@ import firebase from '../shared/firebase'
 
 
 
-const CreateEvent = props => {
+const CreateEvent = (host, props) => {
 
     const [pictures, setPictures] = useState([]);
     const [date, setDate] = useState();
@@ -46,17 +46,21 @@ const CreateEvent = props => {
         }
         var date = data["date"];
         date = date.toISOString().substring(0, 10);
+        var name = host["name"]["name"]["displayName"];
         const item = {
             "cuisine" : data["cuisine"],
             "date" : date,
+            "host": name,
             "group-size" : "1/" + data["party-size"],
             "time" : time_start + "-" + time_end,
             "id" : itemsRef.key,
             "name" : data["restaurant-name"],
             "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fbuffalo.jpg?alt=media&token=ed14f7b4-53c9-4ff9-a9db-7787bced5231",
             "description": data["description"],
-            "people": ["Mary"]
+            "people": [name]
         };
+        console.log(name);
+        console.log(host);
         console.log(date);
         console.log(item);
         // itemsRef.push(item);
