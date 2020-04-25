@@ -126,7 +126,7 @@ const CreateEvent = (host, props) => {
                             <Field.Label> <Label> Tags </Label>
                                 <Control expanded={true}>
                                     <Select.Container fullwidth={true}>
-                                        <Select name="tags" ref={register}>
+                                        <Select name="tag" ref={register}>
                                             {Object.values(tags).map(value =>
                                                 <Select.Option key={value}> {value} </Select.Option>)
                                             }
