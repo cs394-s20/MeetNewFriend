@@ -1,6 +1,13 @@
 import React from 'react';
 import { Button, Container, Field, Control, Label, Select } from "rbx";
 import Popup from "reactjs-popup";
+import Profile from "./Profile.js";
+import ReactHover from 'react-hover';
+
+const optionsCursorTrueWithMargin = {
+      followCursor:true
+}
+
 
 const ViewList = (group) => {
 
@@ -16,7 +23,11 @@ const ViewList = (group) => {
                     <li>
                         <Field horizontal={true}>
                             <ul>
-                                {group["group"].map((person) => <li key={person}>{person}</li>)}
+
+                            <Popup trigger={<Button className="guest-button">{group["group"].map((person) => <li key={person}>{person}</li>)}</Button>} position="right bottom"
+                                   closeOnDocumentClick>
+                            </Popup>
+
                             </ul>
                         </Field>
                     </li>

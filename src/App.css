@@ -150,6 +150,13 @@
   border-color: #282c34;
 }
 
+.button.button.profile-button {
+  margin-left: 5%;
+  position: initial;
+  background-color: transparent;
+  /* border-color: #282c34; */
+}
+
 .is-horizontal .field-label {
   display: flex;
 }
@@ -187,7 +194,6 @@
 
 .popup_guest{
   text-align: center;
-
 }
 
 .viewList {

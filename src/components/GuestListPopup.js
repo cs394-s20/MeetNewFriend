@@ -3,8 +3,6 @@ import ViewList from "./ViewList";
 import Popup from "reactjs-popup";
 import React from "react";
 
-
-
 const GuestListPopup = props => {
     const current = props["groupSize"];
     const group = props["group"];
@@ -17,5 +15,3 @@ const GuestListPopup = props => {
 };
 
 export default GuestListPopup;
-
-
