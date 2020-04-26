@@ -146,7 +146,9 @@ const Restaurant = ({ name, event }) => {
                         <Button.Group>
                             {<Button value={event['id']} onClick={() => removeEvent(event.id)} disabled={name !== event["host"]} as="a">Remove</Button>}
                             <p className='join-button'>
+                                <EditPopUp {...propsforEdit} />
                                 <JoinButton {...propsForJoin} />
+
                             </p>
 
                         </Button.Group>
