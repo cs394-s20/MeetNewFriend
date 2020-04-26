@@ -11,7 +11,7 @@ const storage = firebase.storage().ref();
 const ref = storage.child("img").child("buffalo.jpg");
 
 
-const Restaurant = ({ name,event }) => {
+const Restaurant = ({ name, event }) => {
     const [image, setImage] = useState("");
     const [joined, setJoined] = useState(false);
     const meals = ['Breakfast', 'Lunch', 'Dinner'];
@@ -78,10 +78,10 @@ const Restaurant = ({ name,event }) => {
     };
 
     const propsForJoin = {
-        id:event["id"],
+        id: event["id"],
         groupSize: event["group-size"],
         group: event["people"],
-        name:name
+        name: name
     };
 
     const propsforEdit = {
@@ -124,7 +124,7 @@ const Restaurant = ({ name,event }) => {
                         <Label>Group Size:
                         <GuestListPopup {...props} current={event["group-size"]}>
 
-                            button is here
+                                button is here
 
                         </GuestListPopup>
                         </Label>
@@ -144,11 +144,11 @@ const Restaurant = ({ name,event }) => {
                     </Field>
                     <Field>
                         <Button.Group>
-                            { <Button value = {event['id']} onClick={() => removeEvent(event.id) } disabled={name!==event["host"]} as="a">Cancel</Button> }
-                            
-                            <EditPopUp {...propsforEdit} />
-                            <JoinButton {...propsForJoin} />
-                           
+                            {<Button value={event['id']} onClick={() => removeEvent(event.id)} disabled={name !== event["host"]} as="a">Remove</Button>}
+                            <p className='join-button'>
+                                <JoinButton {...propsForJoin} />
+                            </p>
+
                         </Button.Group>
                         
   
@@ -164,7 +164,7 @@ const Restaurant = ({ name,event }) => {
 };
 
 
-const removeEvent =  id => {
+const removeEvent = id => {
     const idRef = firebase.database().ref('events/' + id);
     idRef.remove();
 };
