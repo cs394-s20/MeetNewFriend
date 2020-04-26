@@ -6,7 +6,7 @@ import React from "react";
 
 const EditPopUp = (props) => {
     return (
-        <Popup trigger={<Button> Edit this event Event </Button>} position="bottom center" modal closeOnDocumentClick>
+        <Popup trigger={<Button> Edit this event </Button>} position="bottom center" modal closeOnDocumentClick>
             <EditEvent {...props}> </EditEvent>
         </Popup>
     );
