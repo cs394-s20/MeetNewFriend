@@ -169,7 +169,7 @@
   margin-bottom: 1%;
 }
 
-.popup-content. {
+.popup-content {
   background-color: darkseagreen;
 }
 
@@ -202,6 +202,10 @@
 
 .popup-overlay .popup-content  {
   background-color: pink !important;
+}
+
+#button-state-Quit {
+  background-color: gold;
 }
 
 @keyframes App-logo-spin {
