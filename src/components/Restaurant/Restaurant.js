@@ -144,15 +144,13 @@ const Restaurant = ({ name,event }) => {
                     </Field>
                     <Field>
                         <Button.Group>
-
                             {<Button value={event['id']} onClick={() => removeEvent(event.id)} disabled={name !== event["host"]} as="a">Remove</Button>}
                             <p className='join-button'>
                                 <JoinButton {...propsForJoin} />
                             </p>
-                           
+
                         </Button.Group>
-                        
-  
+
                     </Field>
 
                 </Card.Content>
