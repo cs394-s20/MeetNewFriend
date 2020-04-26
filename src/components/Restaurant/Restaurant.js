@@ -5,6 +5,7 @@ import "firebase/storage";
 import GuestListPopup from '../GuestListPopup';
 import JoinButton from "../JoinButton";
 import ViewList from '../ViewList';
+import EditPopUp from "../EditPopUp";
 
 const storage = firebase.storage().ref();
 const ref = storage.child("img").child("buffalo.jpg");
@@ -83,6 +84,17 @@ const Restaurant = ({ name,event }) => {
         name:name
     };
 
+    const propsforEdit = {
+        id:event["id"],
+        cuisine : event["cuisine"],
+        date : event["date"],
+        description : event["description"],
+        groupSize: event["group-size"],
+        tag: event["tag"],
+        time: event['time'],
+        resname : event["name"]
+    };
+
     return (
         <li>
             <Card>
@@ -132,15 +144,19 @@ const Restaurant = ({ name,event }) => {
                     </Field>
                     <Field>
                         <Button.Group>
-                            { <Button value = {event['id']} onClick={() => removeEvent(event.id) } disabled={name!==event["host"]} as="a">Remove</Button> }
+                            { <Button value = {event['id']} onClick={() => removeEvent(event.id) } disabled={name!==event["host"]} as="a">Cancel</Button> }
+                            
+                            <EditPopUp {...propsforEdit} />
                             <JoinButton {...propsForJoin} />
+                           
                         </Button.Group>
-
+                        
+  
                     </Field>
 
                 </Card.Content>
 
-            </Card>
+            </Card>  
             <br />
         </li>
     );
