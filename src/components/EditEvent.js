@@ -19,7 +19,8 @@ const db = firebase.database();
 
 const EditEvent = (props) => {
 
-    const name = props["resname"]
+    const name = props["resname"] 
+    console.log("Checking")
     const id = props["id"]
     const description1 = props["description"]
     const tag = props["tag"]
