@@ -10,7 +10,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import TimePicker from 'rc-time-picker';
 import 'rc-time-picker/assets/index.css';
 import moment from 'moment';
-import firebase from '../shared/firebase'
+import firebase from '../shared/firebase';
+import tags from '../shared/tags';
 
 
 
@@ -57,7 +58,8 @@ const CreateEvent = (host, props) => {
             "name" : data["restaurant-name"],
             "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fbuffalo.jpg?alt=media&token=ed14f7b4-53c9-4ff9-a9db-7787bced5231",
             "description": data["description"],
-            "people": [name]
+            "people": [name],
+            "tag": data["tag"]
         };
         // console.log(name);
         // console.log(host);
@@ -119,6 +121,21 @@ const CreateEvent = (host, props) => {
                         </Field>
                     </li>
 
+                    <li>
+                        <Field horizontal={true}>
+                            <Field.Label> <Label> Tags </Label>
+                                <Control expanded={true}>
+                                    <Select.Container fullwidth={true}>
+                                        <Select name="tag" ref={register}>
+                                            {Object.values(tags).map(value =>
+                                                <Select.Option key={value}> {value} </Select.Option>)
+                                            }
+                                        </Select>
+                                    </Select.Container>
+                                </Control>
+                            </Field.Label>
+                        </Field>
+                    </li>
 
                     <li>
                         <Field horizontal={true}>

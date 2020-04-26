@@ -83,7 +83,6 @@ const Restaurant = ({ name,event }) => {
         name:name
     };
 
-
     return (
         <li>
             <Card>
@@ -96,7 +95,10 @@ const Restaurant = ({ name,event }) => {
                 </Card.Header>
 
                 <Card.Content>
+                    <Field>
+                        <Label class="tag">{event["tag"]}</Label>
 
+                    </Field>
                     <Field>
                         {/* <p> */}
                         <Label> Date: </Label>
