@@ -24,9 +24,16 @@ const ViewList = (group) => {
                         <Field horizontal={true}>
                             <ul>
 
-                            <Popup trigger={<Button className="guest-button">{group["group"].map((person) => <li key={person}>{person}</li>)}</Button>} position="right bottom"
-                                   closeOnDocumentClick>
-                            </Popup>
+                            {group["group"].map((person) =>
+                                <li key={person}>
+
+                                <Popup trigger={<Button className="guest-button">
+                                    {person}</Button>} position="right bottom"
+                                       closeOnDocumentClick>
+                                    <Profile name={person}></Profile>
+                                </Popup>
+
+                                </li>)}
 
                             </ul>
                         </Field>
