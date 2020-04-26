@@ -151,7 +151,6 @@ const Restaurant = ({ name,event }) => {
                             </p>
                            
                         </Button.Group>
-                        <EditPopUp {...propsforEdit} />
                         
   
                     </Field>
