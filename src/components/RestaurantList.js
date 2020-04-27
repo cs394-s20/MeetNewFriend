@@ -39,11 +39,11 @@ const RestaurantList = ({ name, events }) => {
             return "Available restaurants:";
         }
         else {
-            return "No restaurants are available";
+            return "Following restaurants match:";
         }
     };
 
-    console.log(matchedRestaurants(events));
+    // console.log(matchedRestaurants(events));
 
 
     return (
@@ -53,7 +53,6 @@ const RestaurantList = ({ name, events }) => {
 
                 <div className='restaurant-list'>
                     {availableWords(matchedRestaurants(events))}
-                {/* <div class="row"> */}
                     <center>
                         <div className="col-md-6 restaurant-info" alt="Max-width 100%">
                             <ul>

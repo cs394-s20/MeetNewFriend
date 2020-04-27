@@ -1,6 +1,5 @@
 import React from 'react';
-import { Button, Container, Field, Control, Label, Select } from "rbx";
-import Popup from "reactjs-popup";
+import {Container, Field} from "rbx";
 
 const ViewList = (group) => {
 
