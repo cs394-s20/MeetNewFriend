@@ -15,7 +15,7 @@ const RestaurantList = ({ name, events }) => {
     const tagMatch = event => tag === event.tag;
 
     const matchedRestaurants = (events) => {
-        if ((cuisine === 'Pick Cuisine' || cuisine === "All") && (tag === "Pick Tag")) {
+        if ((cuisine === 'Pick Cuisine' || cuisine === "All") && (tag === "Pick Tag" || tag === "All")) {
             return events;
         }
         else {
@@ -25,7 +25,7 @@ const RestaurantList = ({ name, events }) => {
             if (cuisine === 'Pick Cuisine' || cuisine === "All"){
                 return arr.filter(tagMatch);
             }
-            else if (tag === "Pick Tag"){
+            else if (tag === "Pick Tag" || tag === "All"){
                 return arr.filter(ANDMatch);
             }
             else{
