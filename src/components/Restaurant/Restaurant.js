@@ -85,6 +85,8 @@ const Restaurant = ({ name, event }) => {
     };
 
     const propsforEdit = {
+        username:name,
+        host:event["host"],
         id:event["id"],
         cuisine : event["cuisine"],
         date : event["date"],
