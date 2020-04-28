@@ -11,7 +11,7 @@ const storage = firebase.storage().ref();
 const ref = storage.child("img").child("buffalo.jpg");
 
 
-const Restaurant = ({ name, event }) => {
+const Restaurant = ({ name, event, people }) => {
     const [image, setImage] = useState("");
     const [joined, setJoined] = useState(false);
     const meals = ['Breakfast', 'Lunch', 'Dinner'];
@@ -74,7 +74,8 @@ const Restaurant = ({ name, event }) => {
 
     const props = {
         groupSize: event["group-size"],
-        group: event["people"]
+        group: event["people"],
+        people: people
     };
 
     const propsForJoin = {

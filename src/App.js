@@ -20,7 +20,7 @@ const db = firebase.database().ref();
 const App = () => {
   const [user,setUser] = useState(null);
   const [initialRender, setInitialRender] = useState(true);
-  const [schedule, setSchedule] = useState({ title: '', events: [] });
+  const [schedule, setSchedule] = useState({ title: '', events: [], People:[]});
   const [currPage, setCurrPage] = useState("login");
 
 
@@ -62,7 +62,7 @@ const App = () => {
           <Route exact path="/restaurant" component={() =>
               <React.Fragment>
                 <PopupWindow name={user}/>
-                <RestaurantList name={user ? user.displayName : null} events={schedule.events}/>
+                <RestaurantList name={user ? user.displayName : null} people={schedule.People} events={schedule.events}/>
               </React.Fragment>
           }/>
         </Switch>

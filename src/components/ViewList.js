@@ -1,8 +1,10 @@
 import React from 'react';
 import { Button, Container, Field, Control, Label, Select } from "rbx";
 import Popup from "reactjs-popup";
+import Profile from "./Profile.js";
 
-const ViewList = (group) => {
+const ViewList = ({group, people}) => {
+    console.log("this is the group passed in", group);
 
     return (
             <Container>
@@ -16,7 +18,17 @@ const ViewList = (group) => {
                     <li>
                         <Field horizontal={true}>
                             <ul>
-                                {group["group"].map((person) => <li key={person}>{person}</li>)}
+
+                                {group.map((person) =>
+                                    <li key={person}>
+
+                                        <Popup trigger={<Button className="guest-button">
+                                            {person}</Button>} position="right bottom"
+                                               closeOnDocumentClick>
+                                            <Profile person={person} people={people}></Profile>
+                                        </Popup>
+
+                                    </li>)}
                             </ul>
                         </Field>
                     </li>

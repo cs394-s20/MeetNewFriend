@@ -6,7 +6,7 @@ import TagFilter from "./TagFilter/TagFilter"
 
 
 
-const RestaurantList = ({ name, events }) => {
+const RestaurantList = ({ name, events, people }) => {
     const [cuisine, setCuisine] = useState('Pick Cuisine');
     const [maxsize,setMaxSize] = useState('10');
     const [tag, setTag] = useState('Pick Tag');
@@ -60,7 +60,7 @@ const RestaurantList = ({ name, events }) => {
                                 {
                                     Object.values(matchedRestaurants(events)).map((e) => {
                                         return (
-                                            <Restaurant name={(name===null) ? null : name} key={e.id} event={e} />
+                                            <Restaurant name={(name===null) ? null : name} key={e.id} people={people} event={e} />
                                         )
                                     })
                                 }

@@ -8,10 +8,12 @@ import React from "react";
 const GuestListPopup = props => {
     const current = props["groupSize"];
     const group = props["group"];
+    const people = props["people"];
+
     return (
         <Popup trigger={<Button className="guest-button"> {current} </Button>} position="right bottom"
                closeOnDocumentClick>
-            <ViewList group={group}> </ViewList>
+            <ViewList group={group} people={people}> </ViewList>
         </Popup>
     );
 };
