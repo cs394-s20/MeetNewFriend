@@ -19,10 +19,11 @@ import tags from '../shared/tags';
 const CreateEvent = (host, props) => {
 
     const [pictures, setPictures] = useState([]);
-    const [date, setDate] = useState();
+    const [date, setDate] = useState(new Date());
     const [time, setTime] = useState();
 
-    const now = moment().hour(0).minute(0);
+    const now = moment();
+    var todayDate = moment(new Date()).format('DD-MM-YYYY');
 
     const onDrop = picture => {
         setPictures([...pictures, picture]);
@@ -142,6 +143,7 @@ const CreateEvent = (host, props) => {
                             <Field.Label> <Label> Date </Label>
                                 <Control expanded={true}>
                                     <DatePicker
+
                                         isClearable
                                         selected={date}
                                         onChange={val => {
