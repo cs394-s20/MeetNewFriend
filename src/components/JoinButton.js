@@ -1,5 +1,5 @@
 import { Button } from "rbx";
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import firebase from '../shared/firebase.js'
 import { confirmAlert } from 'react-confirm-alert'; 
 import 'react-confirm-alert/src/react-confirm-alert.css';

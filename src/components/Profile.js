@@ -39,7 +39,7 @@ const Profile = ({person, people}) => {
                         <img src={filteredPerson.imageURL} style={{ width: 300, height: 200 }} alt="Logo" />
                     </Card.Image>
                 </Card>
-                
+
                 <br/>
             </li>
             )

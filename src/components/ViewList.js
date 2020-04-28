@@ -1,7 +1,11 @@
 import React from 'react';
+<<<<<<< HEAD
 import { Button, Container, Field, Control, Label, Select } from "rbx";
 import Popup from "reactjs-popup";
 import Profile from "./Profile.js";
+=======
+import {Container, Field} from "rbx";
+>>>>>>> 508583403e38cf386319ca4eb5ea59b4dac0bce4
 
 const ViewList = ({group, people}) => {
     console.log("this is the group passed in", group);

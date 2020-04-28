@@ -4,7 +4,6 @@ import './App.css';
 import 'rbx/index.css';
 import 'firebase/auth';
 import firebase from './shared/firebase.js'
-import { Button,Navbar, Container, Title } from 'rbx';
 import React, { useState, useEffect } from 'react';
 import RestaurantList from "./components/RestaurantList";
 import HeaderBar from "./components/HeaderBar";
@@ -43,7 +42,7 @@ const App = () => {
     firebase.auth().onAuthStateChanged(user=>{
       setUser(user);
       setInitialRender(false);
-      console.log(user);
+      // console.log(user);
     });
 
     const handleData = snap => {

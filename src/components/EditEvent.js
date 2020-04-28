@@ -1,9 +1,7 @@
 import React from 'react';
 import { Button, Container, Field, Control, Label, Select } from "rbx";
 import { useState } from 'react';
-import Restaurant from "./Restaurant";
 import cuisine from '../shared/data';
-import ImageUploader from 'react-images-upload';
 import { useForm , ErrorMessage} from 'react-hook-form';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -19,7 +17,7 @@ const db = firebase.database();
 
 const EditEvent = (props) => {
 
-    const name = props["resname"]
+    const name = props["resname"] 
     const id = props["id"]
     const description1 = props["description"]
     const tag = props["tag"]
@@ -67,57 +65,55 @@ const EditEvent = (props) => {
 
     const onSubmit = (data) =>{
         
-        if (data["restaurant-name"] != name){
+        if (data["restaurant-name"] !== name){
             db.ref("events/" + id + "/name").set(data["restaurant-name"])}
 
-        if (data["cuisine"] != cuisine1){
+        if (data["cuisine"] !== cuisine1){
             db.ref("events/" + id + "/cuisine").set(data["cuisine"])}
         
 
-        if (data["description"] != description1){
+        if (data["description"] !== description1){
             db.ref("events/" + id + "/description").set(data["description"])}
         
-        if (data["tag"] != tag){
+        if (data["tag"] !== tag){
             db.ref("events/" + id + "/tag").set(data["tag"])}
         
         const peop = size1.split('/')[0]
-        if (data["party-size"] != size1){
+        if (data["party-size"] !== size1){
             db.ref("events/" + id + "/group-size").set(peop +"/"+data["party-size"])}
-        
-
-        var date = data["date"];
-        console.log(date)
-        console.log(now)
-        
-        if( moment.isMoment(date) == false ){
-            date = date.toISOString().substring(0, 10);
-            console.log("in here")
-            db.ref("events/" + id + "/date").set(date)
-        }
-        
         
         var time_start = start;
         var time_end = end
 
-        if (data["time-start"] != starts) {
+        if (data["time-start"] !== starts) {
             time_start = String(data["time-start"]["_d"]);
             var arr = time_start.split(" ");
             time_start = arr[4].substring(0, 5);
             
         }
                 
-        if (data["time-end"] != ends) {
+        if (data["time-end"] !== ends) {
             time_end = String(data["time-end"]["_d"]);
             var arr = time_end.split(" ");
             time_end = arr[4].substring(0, 5);
 
         }
         const time_string = time_start +"-"+ time_end
-        if (time_string != time1) {
+        if (time_string !== time1) {
             db.ref("events/" + id + "/time").set(time_string)}
-        
-       
-    
+
+        var date = data["date"];
+
+        if (!moment.isMoment(date)){            
+            date = date.toISOString().substring(0, 10);
+            db.ref("events/" + id + "/date").set(date)
+            
+        }
+        else{
+            var nowdate = date["_d"]            
+            nowdate = nowdate.toISOString().substring(0, 10);             
+            db.ref("events/" + id + "/date").set(nowdate)
+        }
     }  
     
 
@@ -128,7 +124,6 @@ const EditEvent = (props) => {
         setValue("time-start", starts)
         setValue("time-end", ends)
         setValue("date", now)
-
     }, []);
 
     

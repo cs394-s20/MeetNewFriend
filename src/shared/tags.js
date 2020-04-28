@@ -1,3 +1,3 @@
-const tags = {S: "School", F: "Fun", SP: "Sports"};
+const tags = {O: 'All', S: "School", F: "Fun", SP: "Sports"};
 
 export default tags;

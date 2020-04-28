@@ -1,10 +1,10 @@
-import { ButtonGroup, Button, Card, Field, Label } from "rbx";
+import {Button, Card, Field, Label } from "rbx";
 import React, { useState, useEffect } from 'react';
 import firebase from '../../../src/shared/firebase.js'
 import "firebase/storage";
 import GuestListPopup from '../GuestListPopup';
 import JoinButton from "../JoinButton";
-import ViewList from '../ViewList';
+// import ViewList from '../ViewList';
 import EditPopUp from "../EditPopUp";
 
 const storage = firebase.storage().ref();
@@ -15,8 +15,7 @@ const Restaurant = ({ name, event, people }) => {
     const [image, setImage] = useState("");
     const [joined, setJoined] = useState(false);
     const meals = ['Breakfast', 'Lunch', 'Dinner'];
-    const [show, setShow] = useState(false);
-
+    
     const matchMeal = duration => {
 
         let meal = null;
@@ -86,6 +85,8 @@ const Restaurant = ({ name, event, people }) => {
     };
 
     const propsforEdit = {
+        username:name,
+        host:event["host"],
         id:event["id"],
         cuisine : event["cuisine"],
         date : event["date"],
@@ -109,7 +110,7 @@ const Restaurant = ({ name, event, people }) => {
 
                 <Card.Content>
                     <Field>
-                        <Label class="tag">{event["tag"]}</Label>
+                        <Label className="tag">{event["tag"]}</Label>
 
                     </Field>
                     <Field>

@@ -1,7 +1,5 @@
-import {Button, InputNumber, Dropdown, Select, Control} from "rbx";
-import TimePicker from 'react-time-picker';
-import NumericInput from 'react-numeric-input';
-import React, {useState} from "react";
+import {Button, Dropdown} from "rbx";
+import React from "react";
 import cuisine from '../../shared/data';
 
 const buttonColor = selected => (

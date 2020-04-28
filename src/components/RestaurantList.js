@@ -15,7 +15,7 @@ const RestaurantList = ({ name, events, people }) => {
     const tagMatch = event => tag === event.tag;
 
     const matchedRestaurants = (events) => {
-        if ((cuisine === 'Pick Cuisine' || cuisine === "All") && (tag === "Pick Tag")) {
+        if ((cuisine === 'Pick Cuisine' || cuisine === "All") && (tag === "Pick Tag" || tag === "All")) {
             return events;
         }
         else {
@@ -25,7 +25,7 @@ const RestaurantList = ({ name, events, people }) => {
             if (cuisine === 'Pick Cuisine' || cuisine === "All"){
                 return arr.filter(tagMatch);
             }
-            else if (tag === "Pick Tag"){
+            else if (tag === "Pick Tag" || tag === "All"){
                 return arr.filter(ANDMatch);
             }
             else{
@@ -39,11 +39,11 @@ const RestaurantList = ({ name, events, people }) => {
             return "Available restaurants:";
         }
         else {
-            return "No restaurants are available";
+            return "Following restaurants match:";
         }
     };
 
-    console.log(matchedRestaurants(events));
+    // console.log(matchedRestaurants(events));
 
 
     return (
@@ -53,7 +53,6 @@ const RestaurantList = ({ name, events, people }) => {
 
                 <div className='restaurant-list'>
                     {availableWords(matchedRestaurants(events))}
-                {/* <div class="row"> */}
                     <center>
                         <div className="col-md-6 restaurant-info" alt="Max-width 100%">
                             <ul>
