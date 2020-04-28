@@ -1,0 +1,519 @@
+{
+   "profiles": [
+      null,
+      {
+         "name": "Jerry Seinfeld",
+         "major": "Theater",
+         "year": "2020",
+         "aboutme": "I like to make people laugh through stand up comedy",
+         "id": "1",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "George Costanza",
+         "major": "RFTV",
+         "year": "2021",
+         "aboutme": "I like naps and when I get tired of naps, I like to take a longer nap.",
+         "id": "2",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Elaine Benis",
+         "major": "Political Science",
+         "year": "2019",
+         "aboutme": "Big salads are better than burger",
+         "id": "3",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Cosmo Kramer",
+         "major": "Undecided",
+         "year": "2022",
+         "aboutme": "Golfing is fun when you're ditching classes",
+         "id": "4",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Frank Costanza",
+         "major": "Economics",
+         "year": "2020",
+         "aboutme": "I love collecting TVGuide magazines",
+         "id": "5",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Zhen Huang",
+         "major": "Computer Science",
+         "year": "2022",
+         "aboutme": "React is my favorite app development framework",
+         "id": "6",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Luke Choe",
+         "major": "Computer Science",
+         "year": "2020",
+         "aboutme": "If you don't like anime, we can't be friends.",
+         "id": "7",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Richard Huang",
+         "major": "Computer Science",
+         "year": "2019",
+         "aboutme": "I break bananas in half instead of peeling them.",
+         "id": "8",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Idrees Kamal",
+         "major": "Design",
+         "year": "2019",
+         "aboutme": "I just learned how to sew and leaned more about fashion.",
+         "id": "9",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Zubair Ahmed",
+         "major": "Undecided",
+         "year": "2022",
+         "aboutme": "Golfing is fun when you're ditching classes",
+         "id": "10",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Emily Nee",
+         "major": "Computer Science",
+         "year": "2020",
+         "aboutme": "I transferred from Georgetown and like to run for fun!",
+         "id": "11",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Sarah Roberts",
+         "major": "Theater",
+         "year": "2022",
+         "aboutme": "My favorite cartoon is South Park.",
+         "id": "12",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Jemille Hill",
+         "major": "Journalism",
+         "year": "2022",
+         "aboutme": "My favorite tv channel is ESPN.",
+         "id": "13",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Jon Snow",
+         "major": "Philosophy",
+         "year": "2022",
+         "aboutme": "I'm from the North side of Chicago. Go Cubs!",
+         "id": "14",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Cersei Lannister",
+         "major": "Political Science",
+         "year": "2020",
+         "aboutme": "I love Roman literature and Greek mythology.",
+         "id": "15",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Arya Stark",
+         "major": "RTVF",
+         "year": "2021",
+         "aboutme": "I am introverted but I love staying active with exercising.",
+         "id": "16",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Yousuf Kadir",
+         "major": "Economics",
+         "year": "2019",
+         "aboutme": "I am hoping to find friends who are into investing and trading.",
+         "id": "17",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Rohail Memon",
+         "major": "Economics",
+         "year": "2020",
+         "aboutme": "I like reading about new medical studies and economic trends.",
+         "id": "18",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Tiana Taylor",
+         "major": "Music",
+         "year": "2021",
+         "aboutme": "I love hip hop and dancing!",
+         "id": "19",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Julie Silverman",
+         "major": "Writing",
+         "year": "2020",
+         "aboutme": "If I become a comedian, I will be very happy.",
+         "id": "20",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Emma DiDomenico",
+         "major": "Philosophy",
+         "year": "2021",
+         "aboutme": "I love reading late night until I fall asleep.",
+         "id": "21",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Lisa Leslie",
+         "major": "Sports Management",
+         "year": "2021",
+         "aboutme": "Basketball is my favorite sport.",
+         "id": "22",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Justine Skye",
+         "major": "Journalism",
+         "year": "2021",
+         "aboutme": "I love keeping up with my favorite athlete blogs.",
+         "id": "23",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Yousuf Musa",
+         "major": "Journalism",
+         "year": "2022",
+         "aboutme": "In my free time, I like to play video games.",
+         "id": "24",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Ismail Patel",
+         "major": "Journalism",
+         "year": "2020",
+         "aboutme": "Football is my favorite sport so Sunday is automatically my favorite day.",
+         "id": "25",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Chris Reisbeck",
+         "major": "Computer Science",
+         "year": "2022",
+         "aboutme": "I want to study Artificial Intelligence in CS.",
+         "id": "26",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Mustafa Drogba",
+         "major": "Undecided",
+         "year": "2023",
+         "aboutme": "I am a freshmen and I love to meet new people.",
+         "id": "27",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Chris Moltasanti",
+         "major": "Political Science",
+         "year": "2022",
+         "aboutme": "I am an international student from Naples, Italy and I enjoy going to the beach.",
+         "id": "28",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Paulie Gualtarie",
+         "major": "Economics",
+         "year": "2022",
+         "aboutme": "If you ain't talking money, I don't want to talk.",
+         "id": "29",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Ralph Cifaretto",
+         "major": "Communications",
+         "year": "2022",
+         "aboutme": "My favorite animal are horses.",
+         "id": "30",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Silvio Dante",
+         "major": "SESP",
+         "year": "2021",
+         "aboutme": "I want to become the mayor of Evanston when I get old.",
+         "id": "31",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Lorraine Brachi",
+         "major": "Psychology",
+         "year": "2021",
+         "aboutme": "The human brain really fascinates me.",
+         "id": "32",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Courtney Cox",
+         "major": "Communications",
+         "year": "2019",
+         "aboutme": "I love writing once I get over writer's block.",
+         "id": "33",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Megan Wheeler",
+         "major": "Psychology",
+         "year": "2021",
+         "aboutme": "Hamlet is my favorite Shakespeare story.",
+         "id": "34",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Lisa Kudrow",
+         "major": "Music",
+         "year": "2022",
+         "aboutme": "My favorite instrument is the guitar.",
+         "id": "35",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Jennifer Aniston",
+         "major": "Theater",
+         "year": "2023",
+         "aboutme": "I want to rush Alpha Phi if I get a chance.",
+         "id": "36",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Zack Knight",
+         "major": "Journalism",
+         "year": "2023",
+         "aboutme": "My life goal is to win an Emmy for writing.",
+         "id": "37",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Lawrence Patrick",
+         "major": "Journalism",
+         "year": "2021",
+         "aboutme": "San Francisco is my favorite city. Go Warriors!",
+         "id": "38",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Aubrey Graham",
+         "major": "Music",
+         "year": "2020",
+         "aboutme": "I love to rap during my free time and write music.",
+         "id": "39",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Jermaine Hus",
+         "major": "Philosophy",
+         "year": "2021",
+         "aboutme": "Cooking is one of my main hobbies!",
+         "id": "40",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Michael Knight",
+         "major": "Theater",
+         "year": "2020",
+         "aboutme": "I hope to act on a tv show when I graduate.",
+         "id": "41",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Sharon Duncan",
+         "major": "SESP",
+         "year": "2022",
+         "aboutme": "My favorite show on Netflix is Top Boy.",
+         "id": "42",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Shelley Sims",
+         "major": "Music",
+         "year": "2021",
+         "aboutme": "If I could have dinner with one person, it would be 2Pac.",
+         "id": "43",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Elizabeth Tan",
+         "major": "SESP",
+         "year": "2021",
+         "aboutme": "I bike every morning to get exercise.",
+         "id": "44",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Davie Modie",
+         "major": "English",
+         "year": "2021",
+         "aboutme": "I won a few spelling bees growing up.",
+         "id": "45",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Sully Kano",
+         "major": "Music",
+         "year": "2022",
+         "aboutme": "I enjoy making people laugh with witty jokes",
+         "id": "46",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Polly Gray",
+         "major": "Economics",
+         "year": "2021",
+         "aboutme": "I like to work hard and play harder.",
+         "id": "47",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Ada Rundle",
+         "major": "Political Science",
+         "year": "2022",
+         "aboutme": "I like to read on past world leaders to learn from their mistakes.",
+         "id": "48",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Natash O'Keef",
+         "major": "Economics",
+         "year": "2022",
+         "aboutme": "I am not sure if I want to work on Wall Street or start my own business.",
+         "id": "49",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Kate Philips",
+         "major": "Math",
+         "year": "2020",
+         "aboutme": "Numbers are fun but most people get scared by them.",
+         "id": "50",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Ben Clafin",
+         "major": "Chemistry",
+         "year": "2021",
+         "aboutme": "Chemistry is my favorite subject!",
+         "id": "51",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Aiden Gillen",
+         "major": "Biology",
+         "year": "2020",
+         "aboutme": "I love to read about human evolution and change in mankind.",
+         "id": "52",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Anna Gunn",
+         "major": "Chemistry",
+         "year": "2022",
+         "aboutme": "Breaking Bad is my favorite show of all time.",
+         "id": "53",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Andrew Schultz",
+         "major": "Writing",
+         "year": "2023",
+         "aboutme": "Stand up comedy is a hobby of mine",
+         "id": "54",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Laura Fraser",
+         "major": "Civil Engineering",
+         "year": "2023",
+         "aboutme": "I am better at STEM subjects than humanities subjects.",
+         "id": "55",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Kristen Ritter",
+         "major": "Chemistry",
+         "year": "2019",
+         "aboutme": "I love chemistry pun jokes.",
+         "id": "56",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Giancarlo Esposito",
+         "major": "Biochemistry",
+         "year": "2021",
+         "aboutme": "Fried chicken is my favorite food.",
+         "id": "57",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Edwin Quiroz",
+         "major": "BME",
+         "year": "2022",
+         "aboutme": "I am from Mexico City and I have always enjoyed living in big cities!",
+         "id": "58",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "RJ Mitte",
+         "major": "BME",
+         "year": "2022",
+         "aboutme": "I find the crossover between biology and technology to be very exciting.",
+         "id": "59",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Benjamin Cranston",
+         "major": "Chemistry",
+         "year": "2021",
+         "aboutme": "I love reading Stephen King books because of his creativity.",
+         "id": "60",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Bobby O'Rourke",
+         "major": "Math",
+         "year": "2022",
+         "aboutme": "I am from Dublin and my accent always gives it away.",
+         "id": "61",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Dean Norris",
+         "major": "SESP",
+         "year": "2023",
+         "aboutme": "Crime TV shows are my favorite genre of shows.",
+         "id": "62",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Elijah Pitre",
+         "major": "Neuroscience",
+         "year": "2021",
+         "aboutme": "My life goal is to open up my own training gym.",
+         "id": "63",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      },
+      {
+         "name": "Jesse Tov",
+         "major": "Computer Science",
+         "year": "2020",
+         "aboutme": "I find programming to be very fascinating!",
+         "id": "64",
+         "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fleedeep.jpg?alt=media&token=c379e94f-cb84-4207-9acf-797c40e1cde1"
+      }
+
+   ],
+   "title": "Profiles"
+}
