@@ -7,6 +7,7 @@ import firebase from "../shared/firebase";
 
 const Profile = ({person, people}) => {
 
+    // stylize CSS of cards
     //click name search it in people
     return(
 
