@@ -8,8 +8,8 @@ import React, { useState, useEffect } from 'react';
 import RestaurantList from "./components/RestaurantList";
 import HeaderBar from "./components/HeaderBar";
 import Login from './components/Login/Login';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import UserEventList from "./components/UserEventList";
 import 'firebase/auth';
 import PopupWindow from "./components/PopupWindow";
 
@@ -60,8 +60,25 @@ const App = () => {
           <Route exact path="/" component={Login} />
           <Route exact path="/restaurant" component={() =>
               <React.Fragment>
+                <Link to="/events">
+                  <button class="button" type="button">
+                      View Events
+                  </button>
+              </Link>
                 <PopupWindow name={user}/>
                 <RestaurantList name={user ? user.displayName : null} people={schedule.People} events={schedule.events}/>
+              </React.Fragment>
+          }/>
+          <Route exact path="/events" component={() =>
+              <React.Fragment>
+                <Link to="/restaurant">
+                  <button class="button" type="button">
+                        Back to Home
+                  </button>
+              </Link>
+                 <PopupWindow name={user}/>
+                 {/* make component where I pass in user (for username), events so that I can query each event's host and people's list */}
+                 <UserEventList name={user ? user.displayName : null} events={schedule.events} people={schedule.People} />
               </React.Fragment>
           }/>
         </Switch>
