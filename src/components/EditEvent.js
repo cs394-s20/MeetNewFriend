@@ -8,7 +8,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import TimePicker from 'rc-time-picker';
 import 'rc-time-picker/assets/index.css';
 import moment from 'moment';
-import firebase from '../shared/firebase';
+import {firebase} from '../shared/firebase';
 import tags from '../shared/tags';
 
 
@@ -17,7 +17,7 @@ const db = firebase.database();
 
 const EditEvent = (props) => {
 
-    const name = props["resname"] 
+    const name = props["resname"]
     const id = props["id"]
     const description1 = props["description"]
     const tag = props["tag"]
@@ -33,7 +33,7 @@ const EditEvent = (props) => {
     const year = date1.split("-")[0]
     const month = date1.split("-")[1]
     const dayW = date1.split("-")[2]
-    
+
 
     const day = new Date(parseInt(year), parseInt(month)-1, parseInt(dayW));
     const dayWrapper = moment(day)
@@ -47,7 +47,7 @@ const EditEvent = (props) => {
     const [dates, setDate1] = useState(date1)
     const [times, setTime1] = useState(time1)
 
-   
+
 
     const startH = start.split(":")[0]
     const startM = start.split(":")[1]
@@ -64,24 +64,24 @@ const EditEvent = (props) => {
     const { register, handleSubmit, errors, setValue} = useForm(); // initialise the hook
 
     const onSubmit = (data) =>{
-        
+
         if (data["restaurant-name"] !== name){
             db.ref("events/" + id + "/name").set(data["restaurant-name"])}
 
         if (data["cuisine"] !== cuisine1){
             db.ref("events/" + id + "/cuisine").set(data["cuisine"])}
-        
+
 
         if (data["description"] !== description1){
             db.ref("events/" + id + "/description").set(data["description"])}
-        
+
         if (data["tag"] !== tag){
             db.ref("events/" + id + "/tag").set(data["tag"])}
-        
+
         const peop = size1.split('/')[0]
         if (data["party-size"] !== size1){
             db.ref("events/" + id + "/group-size").set(peop +"/"+data["party-size"])}
-        
+
         var time_start = start;
         var time_end = end
 
@@ -89,9 +89,9 @@ const EditEvent = (props) => {
             time_start = String(data["time-start"]["_d"]);
             var arr = time_start.split(" ");
             time_start = arr[4].substring(0, 5);
-            
+
         }
-                
+
         if (data["time-end"] !== ends) {
             time_end = String(data["time-end"]["_d"]);
             var arr = time_end.split(" ");
@@ -104,18 +104,18 @@ const EditEvent = (props) => {
 
         var date = data["date"];
 
-        if (!moment.isMoment(date)){            
+        if (!moment.isMoment(date)){
             date = date.toISOString().substring(0, 10);
             db.ref("events/" + id + "/date").set(date)
-            
+
         }
         else{
-            var nowdate = date["_d"]            
-            nowdate = nowdate.toISOString().substring(0, 10);             
+            var nowdate = date["_d"]
+            nowdate = nowdate.toISOString().substring(0, 10);
             db.ref("events/" + id + "/date").set(nowdate)
         }
-    }  
-    
+    }
+
 
     React.useEffect(() => {
         register({ name: "date" }, { required: true });
@@ -126,12 +126,12 @@ const EditEvent = (props) => {
         setValue("date", now)
     }, []);
 
-    
+
 
     const party_size = [];
 
-    for (var i = 1; i <= 30; i++) { 
-        party_size.push( 
+    for (var i = 1; i <= 30; i++) {
+        party_size.push(
             <Select.Option key={i}> {i} </Select.Option>
     )}
 
@@ -147,7 +147,7 @@ const EditEvent = (props) => {
                                 <textarea defaultValue={props["resname"]} type="text" name="restaurant-name" ref={register({ required: true })}
                                 onChange = {val => {
                                     setRestName(val);
-                                }}/> 
+                                }}/>
                                 <ErrorMessage errors={errors} name="restaurant-name" message="This is required" />
                             </Field.Label>
 
@@ -159,7 +159,7 @@ const EditEvent = (props) => {
                             <Field.Label> <Label> Cuisine </Label>
                                 <Control expanded={true}>
                                     <Select.Container fullwidth={true}>
-                                        <Select defaultValue = {props["cuisine"]} name="cuisine" ref={register} 
+                                        <Select defaultValue = {props["cuisine"]} name="cuisine" ref={register}
                                         onChange = {val =>{
                                             setCuisine(val);
                                         }}>
@@ -224,12 +224,12 @@ const EditEvent = (props) => {
                                             setValue("time-start", val);// Here we are setting the value for the registered input.
                                             setTime1(val)
                                         }}
-                                         
+
                                     />
                                     <ErrorMessage errors={errors} name="time-start" message="This is required" />
                                 </Control>
                             </Field.Label>
- 
+
                         </Field>
                     </li>
 
@@ -283,10 +283,10 @@ const EditEvent = (props) => {
                                 }} />
                             </Field.Label>
                         </Field>
-                    </li> 
+                    </li>
                     <Button type="submit" color="info" size = "large"> submit </Button>
                 </form>
- 
+
 
                 {
                     pictures.map( picture =>

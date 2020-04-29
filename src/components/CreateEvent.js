@@ -10,8 +10,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import TimePicker from 'rc-time-picker';
 import 'rc-time-picker/assets/index.css';
 import moment from 'moment';
-import firebase from '../shared/firebase';
 import tags from '../shared/tags';
+import {storage, firebase} from '../shared/firebase'
 
 
 
@@ -19,55 +19,58 @@ import tags from '../shared/tags';
 const CreateEvent = (host, props) => {
 
     const [pictures, setPictures] = useState([]);
-    const [date, setDate] = useState();
-    const [time, setTime] = useState();
+    const [date, setDate] = useState(new Date());
+    const [time, setTime] = useState(moment());
+    const [url, setURL] = useState("");
 
-    const now = moment().hour(0).minute(0);
-
-    const onDrop = picture => {
-        setPictures([...pictures, picture]);
-        console.log("pictures");
-        console.log(pictures)
-    };
+    const now = moment();
 
     const { register, handleSubmit, errors, setValue} = useForm(); // initialise the hook
     const onSubmit = data => {
-        const itemsRef = firebase.database().ref('events');
-        var time_start = "00:00";
-        if (data["time-start"] != undefined) {
-            time_start = String(data["time-start"]["_d"]);
-            var arr = time_start.split(" ");
-            time_start = arr[4].substring(0, 5);
-        }
-        var time_end = "00:00";
-        if (data["time-end"] != undefined) {
-            time_end = String(data["time-end"]["_d"]);
-            var arr = time_end.split(" ");
-            time_end = arr[4].substring(0, 5);
-        }
-        var date = data["date"];
-        date = date.toISOString().substring(0, 10);
-        var name = host["name"]["name"]["displayName"];
-        const item = {
-            "cuisine" : data["cuisine"],
-            "date" : date,
-            "host": name,
-            "group-size" : "1/" + data["party-size"],
-            "time" : time_start + "-" + time_end,
-            "id" : itemsRef.key,
-            "name" : data["restaurant-name"],
-            "imageURL": "https://firebasestorage.googleapis.com/v0/b/meetnewfriends-6e495.appspot.com/o/img%2Fbuffalo.jpg?alt=media&token=ed14f7b4-53c9-4ff9-a9db-7787bced5231",
-            "description": data["description"],
-            "people": [name],
-            "tag": data["tag"]
-        };
-        // console.log(name);
-        // console.log(host);
-        // console.log(date);
-        // console.log(item);
-        itemsRef.push(item);
-        alert("Event is successfully created!");
-        window.location.reload(false);
+        setTimeout(() => {
+            console.log("World!");
+            console.log("before submit", url);
+            const itemsRef = firebase.database().ref('events');
+            var time_start = "00:00";
+            if (data["time-start"] != undefined) {
+                time_start = String(data["time-start"]["_d"]);
+                var arr = time_start.split(" ");
+                time_start = arr[4].substring(0, 5);
+            }
+            var time_end = "00:00";
+            if (data["time-end"] != undefined) {
+                time_end = String(data["time-end"]["_d"]);
+                var arr = time_end.split(" ");
+                time_end = arr[4].substring(0, 5);
+            }
+            var date = data["date"];
+            date = date.toISOString().substring(0, 10);
+            var name = host["name"]["name"]["displayName"];
+
+            const item = {
+                "cuisine" : data["cuisine"],
+                "date" : date,
+                "host": name,
+                "group-size" : "1/" + data["party-size"],
+                "time" : time_start + "-" + time_end,
+                "id" : itemsRef.key,
+                "name" : data["restaurant-name"],
+                "imageURL": url,
+                "description": data["description"],
+                "people": [name],
+                "tag": data["tag"]
+            };
+            // console.log(name);
+            // console.log(host);
+            // console.log(date);
+            console.log(item);
+            itemsRef.push(item);
+            alert("Event is successfully created!");
+            window.location.reload(false);
+
+            console.log("World!");
+            }, 1000);
+
     };
 
     // You can also register inputs manually, which is useful when working with custom components
@@ -142,6 +145,7 @@ const CreateEvent = (host, props) => {
                             <Field.Label> <Label> Date </Label>
                                 <Control expanded={true}>
                                     <DatePicker
+
                                         isClearable
                                         selected={date}
                                         onChange={val => {
@@ -224,33 +228,50 @@ const CreateEvent = (host, props) => {
                         </Field>
                     </li>
 
-                    {/*<input name="firstname" ref={register} /> /!* register an input *!/*/}
+                    <ImageUploader
+                        {...props}
+                        withIcon={true}
+                        withPreview={true}
+                        onChange={(picture) => {
+                            var tmp = pictures.concat(picture);
+                            setPictures(tmp);
+                            console.log(picture);
 
-                    {/*<input name="lastname" ref={register({ required: true })} />*/}
-                    {/*{errors.lastname && 'Last name is required.'}*/}
+                            // upload images to storage
+                            const path = `img/${picture[0].name}`;
+                            console.log(path);
+                            const uploadTask = storage.ref( path ).put(picture[0]);
+                            uploadTask.on('state_changed',
+                                (snapshot) => {
+                                    // progress function ....
+                                },
+                                (error) => {
+                                    // error function ....
+                                    console.log(error);
+                                },
+                                () => {
+                                    // complete function ....
+                                    storage.ref('img').child(picture[0].name).getDownloadURL().then(url => {
+                                        console.log(url);
+                                        setURL(url);
+                                    })
+                                });
 
-                    {/*<input name="age" ref={register({ pattern: /\d+/ })} />*/}
-                    {/*{errors.age && 'Please enter number for age.'}*/}
+                        }}
+                        imgExtension={[".jpg", ".gif", ".png", ".gif"]}
+                        maxFileSize={5242880}
+                    >
+
+                        {
+                            pictures.map( picture =>
+                                <div> {picture.name} </div>
+                            )
+                        }
+
+                    </ImageUploader>
 
                     <Button type="submit" color="info"> submit </Button>
                 </form>
-
-
-                <ImageUploader
-                    {...props}
-                    withIcon={true}
-                    withPreview={true}
-                    onChange={onDrop}
-                    imgExtension={[".jpg", ".gif", ".png", ".gif"]}
-                    maxFileSize={5242880}
-                />
-
-                {
-                    pictures.map( picture =>
-                        <div> {picture.name} </div>
-                    )
-                }
-
 
             </ul>
 

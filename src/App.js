@@ -3,7 +3,7 @@ import 'firebase/database';
 import './App.css';
 import 'rbx/index.css';
 import 'firebase/auth';
-import firebase from './shared/firebase.js'
+import {firebase, storage} from './shared/firebase.js'
 import React, { useState, useEffect } from 'react';
 import RestaurantList from "./components/RestaurantList";
 import HeaderBar from "./components/HeaderBar";

@@ -1,6 +1,6 @@
 import {Button, Card, Field, Label } from "rbx";
 import React, { useState, useEffect } from 'react';
-import firebase from '../../../src/shared/firebase.js'
+import {firebase} from '../../../src/shared/firebase.js'
 import "firebase/storage";
 import GuestListPopup from '../GuestListPopup';
 import JoinButton from "../JoinButton";
@@ -15,7 +15,7 @@ const Restaurant = ({ name, event, people }) => {
     const [image, setImage] = useState("");
     const [joined, setJoined] = useState(false);
     const meals = ['Breakfast', 'Lunch', 'Dinner'];
-    
+
     const matchMeal = duration => {
 
         let meal = null;
@@ -154,13 +154,13 @@ const Restaurant = ({ name, event, people }) => {
                             </p>
 
                         </Button.Group>
-                        
-  
+
+
                     </Field>
 
                 </Card.Content>
 
-            </Card>  
+            </Card>
             <br />
         </li>
     );

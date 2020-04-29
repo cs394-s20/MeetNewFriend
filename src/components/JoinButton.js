@@ -1,7 +1,7 @@
 import { Button } from "rbx";
 import React, { useState} from 'react';
-import firebase from '../shared/firebase.js'
-import { confirmAlert } from 'react-confirm-alert'; 
+import {firebase} from '../shared/firebase.js'
+import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 
 const db = firebase.database().ref();
@@ -70,19 +70,19 @@ const JoinButton = (props) => {
                     onClick: () => {
                         setGroup(temp);
                         setValue("Join");
-            
+
                         db.child('events').child(id).child("people").set(group)
                             .catch(error => {
                                 alert(error);
                                 console.log("can't update database")
                             });
-            
-            
+
+
                         let [cur, max] = breakNumber(current);
                         cur = cur - 1;
                         const val = cur.toString() + "/" + max.toString();
                         const updatedSize = { "group-size": val };
-            
+
                         db.child('events').child(id).update(updatedSize)
                             .catch(error => {
                                 alert(error);
