@@ -69,23 +69,11 @@ const App = () => {
                 <RestaurantList name={user ? user.displayName : null} people={schedule.People} events={schedule.events}/>
               </React.Fragment>
           }/>
-          <Route exact path="/events" component={() =>
-              <React.Fragment>
-                <Link to="/restaurant">
-                  <button class="button" type="button">
-                        Back to Home
-                  </button>
-              </Link>
-                 <PopupWindow name={user}/>
-                 {/* make component where I pass in user (for username), events so that I can query each event's host and people's list */}
-                 <UserEventList name={user ? user.displayName : null} events={schedule.events} people={schedule.People} />
-              </React.Fragment>
-          }/>
+          
         </Switch>
       </Router>
     ));
 
 };
-
 
 export default App;
