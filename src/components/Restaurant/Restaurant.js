@@ -97,6 +97,14 @@ const Restaurant = ({ name, event, people }) => {
         resname : event["name"]
     };
 
+    const removeEvent = id => {
+        if(name === event["host"]){
+            const idRef = firebase.database().ref('events/' + id);
+            idRef.remove();
+        }
+        
+    };
+
     return (
         <li>
             <Card>
@@ -146,7 +154,8 @@ const Restaurant = ({ name, event, people }) => {
                     </Field>
                     <Field>
                         <Button.Group>
-                            {<Button value={event['id']} onClick={() => removeEvent(event.id)} disabled={name !== event["host"]} as="a">Remove</Button>}
+                            
+                            {<Button value={event['id']} disabled={name !== event["host"]} onClick={() => removeEvent(event.id)}  as="a">Remove</Button>}
                             <p className='join-button'>
                                 <EditPopUp {...propsforEdit} />
                                 <JoinButton {...propsForJoin} />
@@ -167,11 +176,6 @@ const Restaurant = ({ name, event, people }) => {
 
 };
 
-
-const removeEvent = id => {
-    const idRef = firebase.database().ref('events/' + id);
-    idRef.remove();
-};
 
 export default Restaurant;
 
