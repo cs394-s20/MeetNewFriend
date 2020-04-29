@@ -27,46 +27,49 @@ const CreateEvent = (host, props) => {
 
     const { register, handleSubmit, errors, setValue} = useForm(); // initialise the hook
     const onSubmit = data => {
+        setTimeout(() => {
+            console.log("World!");
+            console.log("before submit", url);
+            const itemsRef = firebase.database().ref('events');
+            var time_start = "00:00";
+            if (data["time-start"] != undefined) {
+                time_start = String(data["time-start"]["_d"]);
+                var arr = time_start.split(" ");
+                time_start = arr[4].substring(0, 5);
+            }
+            var time_end = "00:00";
+            if (data["time-end"] != undefined) {
+                time_end = String(data["time-end"]["_d"]);
+                var arr = time_end.split(" ");
+                time_end = arr[4].substring(0, 5);
+            }
+            var date = data["date"];
+            date = date.toISOString().substring(0, 10);
+            var name = host["name"]["name"]["displayName"];
 
-        console.log("World!");
-        console.log("before submit", url);
-        const itemsRef = firebase.database().ref('events');
-        var time_start = "00:00";
-        if (data["time-start"] != undefined) {
-            time_start = String(data["time-start"]["_d"]);
-            var arr = time_start.split(" ");
-            time_start = arr[4].substring(0, 5);
-        }
-        var time_end = "00:00";
-        if (data["time-end"] != undefined) {
-            time_end = String(data["time-end"]["_d"]);
-            var arr = time_end.split(" ");
-            time_end = arr[4].substring(0, 5);
-        }
-        var date = data["date"];
-        date = date.toISOString().substring(0, 10);
-        var name = host["name"]["name"]["displayName"];
+            const item = {
+                "cuisine" : data["cuisine"],
+                "date" : date,
+                "host": name,
+                "group-size" : "1/" + data["party-size"],
+                "time" : time_start + "-" + time_end,
+                "id" : itemsRef.key,
+                "name" : data["restaurant-name"],
+                "imageURL": url,
+                "description": data["description"],
+                "people": [name],
+                "tag": data["tag"]
+            };
+            // console.log(name);
+            // console.log(host);
+            // console.log(date);
+            console.log(item);
+            itemsRef.push(item);
+            alert("Event is successfully created!");
+            window.location.reload(false);
 
-        const item = {
-            "cuisine" : data["cuisine"],
-            "date" : date,
-            "host": name,
-            "group-size" : "1/" + data["party-size"],
-            "time" : time_start + "-" + time_end,
-            "id" : itemsRef.key,
-            "name" : data["restaurant-name"],
-            "imageURL": url,
-            "description": data["description"],
-            "people": [name],
-            "tag": data["tag"]
-        };
-        // console.log(name);
-        // console.log(host);
-        // console.log(date);
-        console.log(item);
-        itemsRef.push(item);
-        alert("Event is successfully created!");
-        window.location.reload(false);
+            console.log("World!");
+            }, 1000);
 
     };
 
@@ -225,60 +228,50 @@ const CreateEvent = (host, props) => {
                         </Field>
                     </li>
 
-                    {/*<input name="firstname" ref={register} /> /!* register an input *!/*/}
+                    <ImageUploader
+                        {...props}
+                        withIcon={true}
+                        withPreview={true}
+                        onChange={(picture) => {
+                            var tmp = pictures.concat(picture);
+                            setPictures(tmp);
+                            console.log(picture);
 
-                    {/*<input name="lastname" ref={register({ required: true })} />*/}
-                    {/*{errors.lastname && 'Last name is required.'}*/}
+                            // upload images to storage
+                            const path = `img/${picture[0].name}`;
+                            console.log(path);
+                            const uploadTask = storage.ref( path ).put(picture[0]);
+                            uploadTask.on('state_changed',
+                                (snapshot) => {
+                                    // progress function ....
+                                },
+                                (error) => {
+                                    // error function ....
+                                    console.log(error);
+                                },
+                                () => {
+                                    // complete function ....
+                                    storage.ref('img').child(picture[0].name).getDownloadURL().then(url => {
+                                        console.log(url);
+                                        setURL(url);
+                                    })
+                                });
 
-                    {/*<input name="age" ref={register({ pattern: /\d+/ })} />*/}
-                    {/*{errors.age && 'Please enter number for age.'}*/}
+                        }}
+                        imgExtension={[".jpg", ".gif", ".png", ".gif"]}
+                        maxFileSize={5242880}
+                    >
+
+                        {
+                            pictures.map( picture =>
+                                <div> {picture.name} </div>
+                            )
+                        }
+
+                    </ImageUploader>
 
                     <Button type="submit" color="info"> submit </Button>
                 </form>
-
-
-                <ImageUploader
-                    {...props}
-                    withIcon={true}
-                    withPreview={true}
-                    onChange={(picture) => {
-                        var tmp = pictures.concat(picture);
-                        setPictures(tmp);
-                        console.log(picture);
-
-                        // upload images to storage
-                        const path = `img/${picture[0].name}`;
-                        console.log(path);
-                        const uploadTask = storage.ref( path ).put(picture[0]);
-                        uploadTask.on('state_changed',
-                            (snapshot) => {
-                                // progress function ....
-                            },
-                            (error) => {
-                                // error function ....
-                                console.log(error);
-                            },
-                            () => {
-                                // complete function ....
-                                storage.ref('img').child(picture[0].name).getDownloadURL().then(url => {
-                                    console.log(url);
-                                    setURL(url);
-                                })
-                            });
-
-                    }}
-                    imgExtension={[".jpg", ".gif", ".png", ".gif"]}
-                    maxFileSize={5242880}
-                >
-
-                {
-                    pictures.map( picture =>
-                        <div> {picture.name} </div>
-                    )
-                }
-
-                </ImageUploader>
-
 
             </ul>
 
