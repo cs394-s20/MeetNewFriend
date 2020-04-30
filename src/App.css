@@ -208,6 +208,13 @@
   background-color: gold;
 }
 
+.personal_info {
+  padding-left: 200px;
+}
+.popup-content  .card-image img{
+  top: -50px
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
