@@ -30,7 +30,6 @@ const CreateEvent = (host, props) => {
         setTimeout(() => {
             console.log("World!");
             console.log("before submit", url);
-            const itemsRef = firebase.database().ref('events');
             var time_start = "00:00";
             if (data["time-start"] != undefined) {
                 time_start = String(data["time-start"]["_d"]);
@@ -53,7 +52,7 @@ const CreateEvent = (host, props) => {
                 "host": name,
                 "group-size" : "1/" + data["party-size"],
                 "time" : time_start + "-" + time_end,
-                "id" : itemsRef.key,
+                "id" : "",
                 "name" : data["restaurant-name"],
                 "imageURL": url,
                 "description": data["description"],
@@ -64,11 +63,18 @@ const CreateEvent = (host, props) => {
             // console.log(host);
             // console.log(date);
             console.log(item);
-            itemsRef.push(item);
-            alert("Event is successfully created!");
-            window.location.reload(false);
-
-            console.log("World!");
+            const itemsRef = firebase.database().ref('events');
+            const key = itemsRef.push(item).key;
+            const editRef = firebase.database().ref("events/" + key + "/id");
+            editRef.set(key)
+                .then ( () => {
+                    alert("Event is successfully created!");
+                    window.location.reload(false);
+                    console.log("World!");
+                })
+                .catch( (error) => {
+                        console.log(error);
+                });
             }, 1000);
 
     };
