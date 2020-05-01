@@ -122,6 +122,10 @@ const Restaurant = ({ name, event, people }) => {
 
                     </Field>
                     <Field>
+                        <Label>Cuisine: </Label>
+                        {event["cuisine"]}
+                    </Field>
+                    <Field>
                         {/* <p> */}
                         <Label> Date: </Label>
                         {event["date"]}
