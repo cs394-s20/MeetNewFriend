@@ -12,6 +12,7 @@ const ref = storage.child("img").child("buffalo.jpg");
 
 
 const Restaurant = ({ name, event, people }) => {
+    console.log(event)
     const [image, setImage] = useState("");
     const [joined, setJoined] = useState(false);
     const meals = ['Breakfast', 'Lunch', 'Dinner'];
@@ -94,7 +95,8 @@ const Restaurant = ({ name, event, people }) => {
         groupSize: event["group-size"],
         tag: event["tag"],
         time: event['time'],
-        resname : event["name"]
+        resname : event["name"],
+        url : event["imageURL"]
     };
 
     const removeEvent = id => {

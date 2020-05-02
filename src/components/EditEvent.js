@@ -8,24 +8,21 @@ import "react-datepicker/dist/react-datepicker.css";
 import TimePicker from 'rc-time-picker';
 import 'rc-time-picker/assets/index.css';
 import moment from 'moment';
-import {firebase} from '../shared/firebase';
+import {storage, firebase} from '../shared/firebase';
 import tags from '../shared/tags';
+import ImageUploader from 'react-images-upload';
 
 
 const db = firebase.database();
 
 
 const EditEvent = (props) => {
-
     
     const date1 = props["date"]
-
     const year = date1.split("-")[0]
     const month = date1.split("-")[1] 
     const dayW = date1.split("-")[2]
-
     const day = new Date(parseInt(year), parseInt(month)-1, parseInt(dayW))
-
     const [date, setDate] = useState(day);
 
     const name = props["resname"] 
@@ -37,8 +34,8 @@ const EditEvent = (props) => {
     const time1 = props["time"]
     const start = time1.split("-")[0]
     const end = time1.split("-")[1]
+    const url1 = props['url']
 
-    console.log(id)
 
     const [RestName,setRestName] = useState(name);
     const [desc, setDescription] = useState(description1)
@@ -46,6 +43,7 @@ const EditEvent = (props) => {
     const [tag1, setTag] = useState(tag)
     const [groups, setGroupSize] = useState(size1)
     const [times, setTime1] = useState(time1)
+    const [url, setURL] = useState("");
 
 
     const startH = start.split(":")[0]
@@ -63,6 +61,9 @@ const EditEvent = (props) => {
     const { register, handleSubmit, errors, setValue} = useForm(); 
 
     const onSubmit = (data) =>{
+        if (url != ""){
+            db.ref("events/" + id + "/imageURL").set(url)
+        }
 
         if (data["restaurant-name"] !== name){
             db.ref("events/" + id + "/name").set(data["restaurant-name"])}
@@ -280,20 +281,52 @@ const EditEvent = (props) => {
                             </Field.Label>
                         </Field>
                     </li> 
+
+                    <ImageUploader
+                        {...props}
+                        withIcon={true}
+                        withPreview={true}
+                        onChange={(picture) => {
+                            var tmp = pictures.concat(picture);
+                            setPictures(tmp);
+
+                            // upload images to storage
+                            const path = `img/${picture[0].name}`;
+                            const uploadTask = storage.ref( path ).put(picture[0]);
+                            uploadTask.on('state_changed',
+                                (snapshot) => {
+                                    // progress function ....
+                                },
+                                (error) => {
+                                    // error function ....
+                                    console.log(error);
+                                },
+                                () => {
+                                    // complete function ....
+                                    storage.ref('img').child(picture[0].name).getDownloadURL().then(url => {
+                                        setURL(url);
+                                    }
+                                    )
+                                });
+
+                        }}
+                        imgExtension={[".jpg", ".gif", ".png", ".gif"]}
+                        maxFileSize={5242880}
+                    >
+
+                        {
+                            pictures.map( picture =>
+                                <div> {picture.name} </div>
+                            )
+                        }
+
+                    </ImageUploader>
+
                     <Button type="submit" color="info" size = "large"> submit </Button>
+                    
                 </form>
- 
-
-                {
-                    pictures.map( picture =>
-                        <div> {picture.name} </div>
-                    )
-                }
-
-
             </ul>
-
-
+         
         </Container>
 
 
