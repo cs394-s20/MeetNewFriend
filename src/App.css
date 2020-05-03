@@ -234,6 +234,10 @@ label.label{
   flex-direction: column;
   word-break: break-word;
 }
+
+#edit-button {
+  margin-right: 10%;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
