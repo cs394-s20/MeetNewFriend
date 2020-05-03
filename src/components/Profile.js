@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { ButtonGroup, Button, Card, Field, Label } from "rbx";
+import { Container, ButtonGroup, Button, Card, Field, Label } from "rbx";
 import Popup from "reactjs-popup";
 import 'firebase/database';
 import 'firebase/auth';
 import firebase from "../shared/firebase";
+
 
 const Profile = ({ person, people }) => {
 
@@ -14,10 +15,10 @@ const Profile = ({ person, people }) => {
         people["profiles"].filter(name => name["name"] === person).map(filteredPerson => (
 
             <li>
-                <li className='personal_info'>
+                <li>
                     {/* <Card>
                         <Field> */}
-                            <Label> Major: 
+                            <Label style={{padding: 80}}> Major:{" "}
                             {filteredPerson["major"]}</Label>
                             <br/>
                         {/* </Field>
@@ -25,28 +26,33 @@ const Profile = ({ person, people }) => {
 
                     {/* <Card>
                         <Field> */}
-                            <Label> Year: 
+                            <Label style={{padding: 80}}> Year:{" "}
                             {filteredPerson["year"]}</Label><br/>
                         {/* </Field>
                     </Card> */}
 
                     {/* <Card>
                         <Field> */}
-                            <Label> About Me: 
-                            {filteredPerson["aboutme"]}</Label><br/>
+                            <Label style={{padding: 80, flexDirection: 'row'}}> About Me:{" "}
+
+                                    {filteredPerson["aboutme"]}
+                              
+                                </Label><br/>
+
                         {/* </Field>
                     </Card> */}
                 </li>
 
-                <Card>
-                    <Card.Image>
-                        <img className='profile_pic'src={filteredPerson.imageURL} style={{ width: 300, height: 200 }} alt="Logo" />
-                    </Card.Image>
-                </Card>
+
+                <Card.Image>
+                        <img src={filteredPerson.imageURL} style={{ width: 70, height: 68.5 }} alt="Logo" />
+                </Card.Image>
+
 
                 <br />
 
             </li>
+
         )
         ));
 };

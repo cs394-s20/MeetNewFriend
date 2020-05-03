@@ -170,11 +170,15 @@
 }
 
 .popup-content {
-  background-color: darkseagreen;
+  /*background-color: darkseagreen;*/
+  width: auto !important;
+  height: auto;
+  position: relative;
 }
 
 .popup-content .container {
   margin-top: 3%;
+
 }
 
 .auth-control button {
@@ -187,7 +191,6 @@
 
 .popup_guest{
   text-align: center;
-
 }
 
 .viewList {
@@ -211,10 +214,22 @@
 .personal_info {
   padding-left: 200px;
 }
+
 .popup-content  .card-image img{
   top: -50px
 }
 
+.profile_content .popup-content{
+  position: absolute;
+  width: 90% !important;
+  border: 1px solid;
+ }
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  word-break: break-word;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
