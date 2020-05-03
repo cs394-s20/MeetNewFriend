@@ -12,6 +12,7 @@ import 'rc-time-picker/assets/index.css';
 import moment from 'moment';
 import tags from '../shared/tags';
 import {storage, firebase} from '../shared/firebase'
+import { confirmAlert } from 'react-confirm-alert';
 
 
 
