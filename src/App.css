@@ -162,7 +162,11 @@
 
 .field-label .label {
   font-size: 1.1rem;
-  margin-right: 2%;
+  margin: inherit;
+}
+
+label.label{
+  margin-right: 35px;
 }
 
 .popup_create li {
