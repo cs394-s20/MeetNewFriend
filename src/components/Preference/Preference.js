@@ -11,7 +11,7 @@ const Preference = ({ state }) => {
 
     return (
         <div className="filter">
-            Preference:
+            Cuisine:
             <Dropdown>
                 <Dropdown.Trigger> <Button color="info"> {state.cuisine} &#9660; </Button> </Dropdown.Trigger>
                 <Dropdown.Menu>

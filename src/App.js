@@ -63,7 +63,7 @@ const App = () => {
 						<div className="view_create">
 							<Link to="/events">
 								<button class="button" type="button">
-									View Events
+									View My Events
                   				</button>
 							</Link>
 							<PopupWindow name={user} />
