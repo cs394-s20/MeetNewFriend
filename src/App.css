@@ -236,7 +236,7 @@ label.label{
 }
 
 #edit-button {
-  margin-right: 10%;
+  left: 50%;
 }
 @keyframes App-logo-spin {
   from {
