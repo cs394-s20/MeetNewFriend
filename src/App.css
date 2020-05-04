@@ -202,6 +202,11 @@ label.label{
   font-weight: 100;
 }
 
+.popup_guest button.button.guest-button {
+  font-size: smaller;
+  background: antiquewhite;
+}
+
 .popup-overlay .popup-content .container {
   background-color: none;
   margin: 0px;
