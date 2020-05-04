@@ -4,18 +4,23 @@ import { useState } from 'react';
 import Restaurant from "./Restaurant";
 import cuisine from '../shared/data';
 import ImageUploader from 'react-images-upload';
-import { useForm , ErrorMessage} from 'react-hook-form';
+import { useForm, ErrorMessage } from 'react-hook-form';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import TimePicker from 'rc-time-picker';
 import 'rc-time-picker/assets/index.css';
 import moment from 'moment';
 import tags from '../shared/tags';
-import {storage, firebase} from '../shared/firebase'
+import { storage, firebase } from '../shared/firebase'
 import { confirmAlert } from 'react-confirm-alert';
 
 
+function myFunction() {
+    var x = document.getElementById("create_event_popup");
 
+    x.style.display = "none";
+    
+}
 
 const CreateEvent = (host, props) => {
 
@@ -26,57 +31,70 @@ const CreateEvent = (host, props) => {
 
     const now = moment();
 
-    const { register, handleSubmit, errors, setValue} = useForm(); // initialise the hook
+    const { register, handleSubmit, errors, setValue } = useForm(); // initialise the hook
     const onSubmit = data => {
-        setTimeout(() => {
-            console.log("World!");
-            console.log("before submit", url);
-            var time_start = "00:00";
-            if (data["time-start"] != undefined) {
-                time_start = String(data["time-start"]["_d"]);
-                var arr = time_start.split(" ");
-                time_start = arr[4].substring(0, 5);
-            }
-            var time_end = "00:00";
-            if (data["time-end"] != undefined) {
-                time_end = String(data["time-end"]["_d"]);
-                var arr = time_end.split(" ");
-                time_end = arr[4].substring(0, 5);
-            }
-            var date = data["date"];
-            date = date.toISOString().substring(0, 10);
-            var name = host["name"]["name"]["displayName"];
+        confirmAlert({
+            title: 'Confirm to create this event',
+            message: 'Are you sure to do this?',
+            buttons: [
+                {
+                    label: 'Yes',
+                    onClick: () => {
+                        setTimeout(() => {
+                            console.log("World!");
+                            console.log("before submit", url);
+                            var time_start = "00:00";
+                            if (data["time-start"] != undefined) {
+                                time_start = String(data["time-start"]["_d"]);
+                                var arr = time_start.split(" ");
+                                time_start = arr[4].substring(0, 5);
+                            }
+                            var time_end = "00:00";
+                            if (data["time-end"] != undefined) {
+                                time_end = String(data["time-end"]["_d"]);
+                                var arr = time_end.split(" ");
+                                time_end = arr[4].substring(0, 5);
+                            }
+                            var date = data["date"];
+                            date = date.toISOString().substring(0, 10);
+                            var name = host["name"]["name"]["displayName"];
 
-            const item = {
-                "cuisine" : data["cuisine"],
-                "date" : date,
-                "host": name,
-                "group-size" : "1/" + data["party-size"],
-                "time" : time_start + "-" + time_end,
-                "id" : "",
-                "name" : data["restaurant-name"],
-                "imageURL": url,
-                "description": data["description"],
-                "people": [name],
-                "tag": data["tag"]
-            };
-            // console.log(name);
-            // console.log(host);
-            // console.log(date);
-            console.log(item);
-            const itemsRef = firebase.database().ref('events');
-            const key = itemsRef.push(item).key;
-            const editRef = firebase.database().ref("events/" + key + "/id");
-            editRef.set(key)
-                .then ( () => {
-                    alert("Event is successfully created!");
-                    window.location.reload(false);
-                    console.log("World!");
-                })
-                .catch( (error) => {
-                        console.log(error);
-                });
-            }, 1000);
+                            const item = {
+                                "cuisine": data["cuisine"],
+                                "date": date,
+                                "host": name,
+                                "group-size": "1/" + data["party-size"],
+                                "time": time_start + "-" + time_end,
+                                "id": "",
+                                "name": data["restaurant-name"],
+                                "imageURL": url,
+                                "description": data["description"],
+                                "people": [name],
+                                "tag": data["tag"]
+                            };
+                            console.log(item);
+                            const itemsRef = firebase.database().ref('events');
+                            const key = itemsRef.push(item).key;
+                            const editRef = firebase.database().ref("events/" + key + "/id");
+                            editRef.set(key)
+                                .then(() => {
+                                    alert("Event is successfully created!");
+                                    window.location.reload(false);
+                                    console.log("World!");
+                                })
+                                .catch((error) => {
+                                    console.log(error);
+                                });
+                        }, 1000);
+                    }
+                },
+                {
+                    label: 'No'
+                }
+            ]
+        });
+        document.getElementById("create_event_popup").style.display = "none";
+
 
     };
 
@@ -97,7 +115,8 @@ const CreateEvent = (host, props) => {
         party_size.push(
             <Select.Option key={i}> {i} </Select.Option>
             // <li key={index}>{value}</li>
-    )}
+        )
+    }
 
 
     return (
@@ -108,7 +127,7 @@ const CreateEvent = (host, props) => {
                     <li >
                         <Field horizontal={true}>
                             <Field.Label> <Label> Restaurant Name </Label>
-                                <textarea type="text" name="restaurant-name" ref={register({ required: true })}/>
+                                <textarea type="text" name="restaurant-name" ref={register({ required: true })} />
                                 <ErrorMessage errors={errors} name="restaurant-name" message="This is required" />
                             </Field.Label>
 
@@ -247,7 +266,7 @@ const CreateEvent = (host, props) => {
                             // upload images to storage
                             const path = `img/${picture[0].name}`;
                             console.log(path);
-                            const uploadTask = storage.ref( path ).put(picture[0]);
+                            const uploadTask = storage.ref(path).put(picture[0]);
                             uploadTask.on('state_changed',
                                 (snapshot) => {
                                     // progress function ....
@@ -270,13 +289,14 @@ const CreateEvent = (host, props) => {
                     >
 
                         {
-                            pictures.map( picture =>
+                            pictures.map(picture =>
                                 <div> {picture.name} </div>
                             )
                         }
 
                     </ImageUploader>
 
+                    {/* <Button type="submit" color="info" onclick={() => myFunction()}> submit </Button> */}
                     <Button type="submit" color="info"> submit </Button>
                 </form>
 

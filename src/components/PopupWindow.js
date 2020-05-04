@@ -7,8 +7,8 @@ import { BrowserRouter as Link } from "react-router-dom";
 
 const PopupWindow = (host) => {
     return (
-        <div>
-        <Popup trigger={<Button> Create Event </Button>} position="bottom center" modal closeOnDocumentClick>
+        <div id='create_event_popup'>
+        <Popup  trigger={<Button> Create Event </Button>} position="bottom center" modal closeOnDocumentClick>
             <CreateEvent name={host}> </CreateEvent>
         </Popup>
         </div>
