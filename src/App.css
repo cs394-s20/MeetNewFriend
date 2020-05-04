@@ -203,7 +203,7 @@ label.label{
 }
 
 .popup-overlay .popup-content .container {
-  background-color: pink;
+  background-color: none;
   margin: 0px;
 }
 
