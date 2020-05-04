@@ -1,11 +1,12 @@
-import {Button, Card, Field, Label } from "rbx";
+import { Button, Card, Field, Label } from "rbx";
 import React, { useState, useEffect } from 'react';
-import {firebase} from '../../../src/shared/firebase.js'
+import { firebase } from '../../../src/shared/firebase.js'
 import "firebase/storage";
 import GuestListPopup from '../GuestListPopup';
 import JoinButton from "../JoinButton";
 // import ViewList from '../ViewList';
 import EditPopUp from "../EditPopUp";
+import { confirmAlert } from 'react-confirm-alert';
 
 const storage = firebase.storage().ref();
 const ref = storage.child("img").child("buffalo.jpg");
@@ -86,25 +87,40 @@ const Restaurant = ({ name, event, people }) => {
     };
 
     const propsforEdit = {
-        username:name,
-        host:event["host"],
-        id:event["id"],
-        cuisine : event["cuisine"],
-        date : event["date"],
-        description : event["description"],
+        username: name,
+        host: event["host"],
+        id: event["id"],
+        cuisine: event["cuisine"],
+        date: event["date"],
+        description: event["description"],
         groupSize: event["group-size"],
         tag: event["tag"],
         time: event['time'],
-        resname : event["name"],
-        url : event["imageURL"]
+        resname: event["name"],
+        url: event["imageURL"]
     };
 
     const removeEvent = id => {
-        if(name === event["host"]){
-            const idRef = firebase.database().ref('events/' + id);
-            idRef.remove();
+        if (name === event["host"]) {
+            confirmAlert({
+                title: 'Confirm to REMOVE this event',
+                message: 'Are you sure to do this?',
+                buttons: [
+                    {
+                        label: 'Yes',
+                        onClick: () => {
+                            const idRef = firebase.database().ref('events/' + id);
+                            idRef.remove();
+                        }
+                    },
+                    {
+                        label: 'No'
+                    }
+                ]
+            });
+
         }
-        
+
     };
 
     return (
@@ -160,8 +176,8 @@ const Restaurant = ({ name, event, people }) => {
                     </Field>
                     <Field>
                         <Button.Group>
-                            
-                            {<Button value={event['id']} disabled={name !== event["host"]} onClick={() => removeEvent(event.id)}  as="a">Remove</Button>}
+
+                            {<Button value={event['id']} disabled={name !== event["host"]} onClick={() => removeEvent(event.id)} as="a">Remove</Button>}
                             <p className='join-button'>
                                 <EditPopUp {...propsforEdit} />
                                 <JoinButton {...propsForJoin} />
