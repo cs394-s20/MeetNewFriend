@@ -127,9 +127,12 @@ const RestaurantList = ({ name, events, people }) => {
 
     return (
         <React.Fragment>
+            <div className='rest_filters'>
             <Preference state={{ cuisine, setCuisine,maxsize,setMaxSize }} />
             <TagFilter state={{ tag, setTag }} />
             <MealFilter state={{mealselection,setMealSelected}} />
+            </div>
+            
 
                 <div className='restaurant-list'>
                     {availableWords(matchedRestaurants(events))}
