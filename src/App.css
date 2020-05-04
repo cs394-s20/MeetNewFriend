@@ -57,6 +57,14 @@
   margin-top: 1%;
 }
 
+nav.navbar.is-primary {
+  background-color: lightcoral;
+}
+
+button.button.is-info {
+  background-color: mediumvioletred;
+}
+
 .filter .dropdown {
   margin-left: 1%;
   margin-right: 0.5%;
@@ -146,8 +154,28 @@
 .button.button.guest-button {
   margin-left: 5%;
   position: initial;
-  background-color: gold;
+  background-color: lavenderblush;
   border-color: #282c34;
+}
+
+button#button-state-Quit.button {
+  background-color: silver;
+}
+
+button#edit-button.button {
+  background-color: seashell;
+}
+
+button#button-state-Join.button {
+  background-color: pink;
+}
+
+.view_create button.button {
+  background-color: peachpuff;
+}
+
+.buttons a.button {
+  background-color: seashell;
 }
 
 .is-horizontal .field-label {
